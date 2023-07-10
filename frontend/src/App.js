@@ -1,23 +1,44 @@
 import logo from './logo.svg';
 import './App.css';
+import Body from './components/Body';
+
+import { Switch, changeTheme, useTheme, styled, Text, Spacer} from '@nextui-org/react'
+import { NextUIProvider } from '@nextui-org/react';
+import { createTheme } from "@nextui-org/react"
+import {useEffect, useState} from 'react';
+
+const lightTheme = createTheme({
+  type: 'light',
+  theme: {
+    
+  }
+})
+
+const darkTheme = createTheme({
+  type: 'dark',
+  theme: {
+    
+  }
+})
 
 function App() {
+  const [isDark, setIsDark] = useState(true)
+  const [getIsDark, setGetIsDark] = useState('')
+  const dark = localStorage.getItem('isDarkLocal')
+
+  useEffect(() => {
+    setGetIsDark(localStorage.getItem('isDarkLocal'))
+  }, []);
+
+  const handleChangeIsDark = () => {
+    setIsDark(!isDark)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <NextUIProvider theme={isDark ? darkTheme : lightTheme}>
+        <Body/>
+      </NextUIProvider>
     </div>
   );
 }
