@@ -1,54 +1,34 @@
-import {Navbar, Button, Link, Text, Spacer, Grid, Avatar} from '@nextui-org/react'
-import React, {useEffect, useState} from 'react'
-import { styled, Card, Container } from "@nextui-org/react"
-import { Switch, changeTheme, useTheme } from '@nextui-org/react'
-import Content from './Content'
+import { Navbar, Link, Text, Avatar, Dropdown, Grid, Spacer, Card, Button } from "@nextui-org/react";
 
 
-export default function Body({onToggleTheme}) {
-    const [isDark, setIsDark] = useState(false)
-    /*const { type, isDark } = useTheme();
-
-    const handleChange = () => {
-        const nextTheme = isDark ? 'light' : 'dark';
-        window.localStorage.setItem('data-theme', nextTheme); // you can use any storage
-        changeTheme(nextTheme);
-    }*/
-    const collapseItems = [
-        "Profile",
-        "Dashboard",
-        "Activity",
-        "Analytics",
-        "System",
-        "Deployments",
-        "My Settings",
-        "Team Settings",
-        "Help & Feedback",
-        "Log Out",
-    ]
-
-    const handleDarkThemeChange = (e) =>{
-        setIsDark(true)
-        localStorage.setItem('isDarkLocal', isDark);
-    }
-    
-    const handleLightThemeChange = (e) =>{
-        setIsDark(false)
-        localStorage.setItem('isDarkLocal', isDark);
-    }
-
-    const btnStyle = {
-        background: 'linear-gradient(to right, #FFB938 -20%, #f33d4e 100%)',
-    }
-    const btnStyleHover = {
-        background: 'linear-gradient(to left, #FFB938 -20%, #f33d4e 100%)',
-    }
-
-    return (
-        <div>
-            <Navbar isBordered variant='sticky'>
-                <Navbar.Brand>
-                    <Grid>
+export default function BodyTest() {
+  const collapseItems = [
+    "Profile",
+    "Dashboard",
+    "Activity",
+    "Analytics",
+    "System",
+    "Deployments",
+    "My Settings",
+    "Team Settings",
+    "Help & Feedback",
+    "Log Out",
+  ];
+  const cardStyles = {
+    background: 'linear-gradient(to right, #FFB938 -20%, #f33d4e 100%)',
+}
+  return (
+      <Navbar isBordered variant="sticky">
+        
+        <Navbar.Brand
+          css={{
+            "@xs": {
+              w: "12%",
+            },
+          }}
+        >
+          
+          <Grid>
                         <Avatar
                         size="lg"
                         src="/avatar.jpg"
@@ -57,19 +37,27 @@ export default function Body({onToggleTheme}) {
                         />
                     </Grid>
                     <Spacer x={1} />
-                    <Text h4 b color="inherit" hideIn="md">
+                    <Text h4 b color="inherit" hideIn="xs">
                         &#60;SanjanaNilanka /&#62;
                     </Text>
-                </Navbar.Brand>
-                <Navbar.Content hideIn="sm" variant="default" enableCursorHighlight>
-                    <Navbar.Link href="#">Home</Navbar.Link>
-                    <Navbar.Link href="#">About</Navbar.Link>
-                    <Navbar.Link href="#">Services</Navbar.Link>
-                    <Navbar.Link href="#">Education</Navbar.Link>
-                    <Navbar.Link href="#">Project</Navbar.Link>
-                    <Navbar.Link href="#">Contact</Navbar.Link>
-                </Navbar.Content>
-                <Navbar.Content>
+        </Navbar.Brand>
+
+        <Navbar.Content
+          enableCursorHighlight
+          activeColor="warning"
+          hideIn="xs"
+          variant="default"
+        >
+          <Navbar.Link href="#">Home</Navbar.Link>
+          <Navbar.Link href="#">
+            Skills
+          </Navbar.Link>
+          <Navbar.Link href="#">Services</Navbar.Link>
+          <Navbar.Link href="#">Resume</Navbar.Link>
+          <Navbar.Link href="#">Contact</Navbar.Link>
+        </Navbar.Content>
+        
+        <Navbar.Content>
                     <Grid.Container gap={0} css={{ d: 'flex', flexWrap: 'nowrap' }}>
                         <Grid>
                             <Navbar.Link color="inherit" href="#">
@@ -95,8 +83,8 @@ export default function Body({onToggleTheme}) {
                         </Grid>
                     </Grid.Container>
                     
-                    <Navbar.Link onClick={onToggleTheme}>  
-                        {!isDark && 
+                    <Navbar.Link>  
+                        {/*!isDark && 
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
@@ -135,9 +123,9 @@ export default function Body({onToggleTheme}) {
                             >
                                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
                             </svg>
-                        }
-                        {isDark}
+                        */}
                     </Navbar.Link>
+                    <Navbar.Toggle showIn="xs" />
                     <Spacer x={0}/>
                     {/*<Navbar.Link color="inherit" href="#">
                         Login
@@ -167,61 +155,29 @@ export default function Body({onToggleTheme}) {
                                Download Resume
                         </Button>
                     </Navbar.Item>
-                    <Navbar.Toggle showIn="xs" />
                 </Navbar.Content>
-                <Navbar.Collapse disableAnimation showIn='xs'>
-                    <Navbar.CollapseItem>
-                        <Link color="inherit" href='#'>
-                            Home
-                        </Link>
-                    </Navbar.CollapseItem>
-                    <Navbar.CollapseItem>
-                        <Link color="inherit" href='#'>
-                            Skills
-                        </Link>
-                    </Navbar.CollapseItem>
-                    <Navbar.CollapseItem>
-                        <Link color="inherit" href='#'>
-                            Services
-                        </Link>
-                    </Navbar.CollapseItem>
-                    <Navbar.CollapseItem>
-                        <Link color="inherit" href='#'>
-                            Resume
-                        </Link>
-                    </Navbar.CollapseItem>
-                    <Navbar.CollapseItem>
-                        <Link color="inherit" href='#'>
-                            Projects
-                        </Link>
-                    </Navbar.CollapseItem>
-                    <Navbar.CollapseItem>
-                        <Link color="inherit" href='#'>
-                            Contact
-                        </Link>
-                    </Navbar.CollapseItem>
-                    <Navbar.CollapseItem>
-                        <Button 
-                            auto 
-                            css={{ 
-                                borderRadius: '$xs', // radii.xs
-                                border: '2px solid $yellow600',
-                                background: 'linear-gradient(to right, #FFB938, #f33d4e)', // colors.pink800
-                                color: '$white',
-                                height: '$12', // space[12]
-                                boxShadow: '$md', // shadows.md
-                                '&:hover': {
-                                background: 'linear-gradient(to left, #FFB938, #f33d4e)',
-                                borderColor:'$red600'
-                                },
-                            }}
-                            >
-                               Download Resume
-                        </Button>
-                    </Navbar.CollapseItem>
-                </Navbar.Collapse>
-            </Navbar>
-            <Content/>
-        </div>
-    )
+        <Navbar.Collapse disableAnimation showIn='xs'>
+          {collapseItems.map((item, index) => (
+            <Navbar.CollapseItem
+              key={item}
+              activeColor="warning"
+              css={{
+                color: index === collapseItems.length - 1 ? "$error" : "",
+              }}
+              isActive={index === 2}
+            >
+              <Link
+                color="inherit"
+                css={{
+                  minWidth: "100%",
+                }}
+                href="#"
+              >
+                {item}
+              </Link>
+            </Navbar.CollapseItem>
+          ))}
+        </Navbar.Collapse>
+      </Navbar>
+  );
 }

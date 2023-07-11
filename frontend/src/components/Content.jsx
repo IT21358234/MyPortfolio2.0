@@ -104,10 +104,10 @@ export default function Content() {
                 </Grid>
                 <Grid xs={12} md={6}>
                     <Container>
-                        <Card  css={{ marginBottom:'$8', height:'56vh', paddingTop:'$-10', background:'transparent'}}>
+                        <Card  css={{ marginBottom:'$8', height:'56vh'}}>
                             <Card.Body>
                                 <Image
-                                    height={600}
+                                    height={308}
                                     src="/me.png"
                                     alt="Default Image"
                                     objectFit="cover"
