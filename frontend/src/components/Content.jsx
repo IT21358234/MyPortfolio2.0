@@ -152,6 +152,299 @@ export default function Content() {
                     
                 </Grid>
             </Grid.Container>
+            
+            <hr style={{border:'solid 2px', margin:'40px'}}/>
+
+            <Text size={40} css={{textAlign:'center', fontWeight:'$extrabold', fontFamily:'monospace'}}>
+                Skills
+            </Text>
+            <Grid.Container gap={2} justify="center" css={{marginTop:'$8'}}>
+                <Grid xs={12} md={6}>
+                    <Container>
+                        <Text h5 size={20}>
+                            Programming Languages
+                        </Text>
+                        <Card css={{marginTop:'$8', marginBottom:'$8'}}>
+                            <Card.Body>
+                                <Grid.Container gap={2} justify="center" css={{color:'$white'}}> 
+                                    <Grid >
+                                        <Link>
+                                            <Card css={{background:'transparent'}}>
+                                                <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
+                                                    <i class="fa-brands fa-java"></i>
+                                                    <Text h3>Java</Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Link>
+                                    </Grid>
+                                    <Grid >
+                                        <Link>
+                                            <Card css={{background:'transparent'}}>
+                                                <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
+                                                    <i class="fa-brands fa-python"></i>
+                                                    <Text h3>Python</Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Link>
+                                    </Grid>
+                                    <Grid >
+                                        <Link>
+                                            <Card css={{background:'transparent'}}>
+                                                <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
+                                                    <i class="fa-brands fa-android"></i>
+                                                    <Text h3>Kotlin</Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Link>
+                                    </Grid>
+                                    <Grid >
+                                        <Link>
+                                            <Card css={{background:'transparent'}}>
+                                                <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
+                                                    <iconify-icon icon="simple-icons:dart"></iconify-icon>
+                                                    <Text h3>Dart</Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Link>
+                                    </Grid>
+                                    <Grid >
+                                        <Link>
+                                            <Card css={{background:'transparent'}}>
+                                                <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
+                                                    <iconify-icon icon="teenyicons:c-sharp-solid"></iconify-icon>
+                                                    <Text h3>C#</Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Link>
+                                    </Grid>
+                                    <Grid >
+                                        <Link>
+                                            <Card css={{background:'transparent'}}>
+                                                <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
+                                                    <iconify-icon icon="file-icons:c"></iconify-icon>
+                                                    <Text h3>C++</Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Link>
+                                    </Grid>
+                                    <Grid >
+                                        <Link>
+                                            <Card css={{background:'transparent'}}>
+                                                <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
+                                                    <i class="fa-brands fa-php"></i>
+                                                    <Text h3>PHP</Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Link>
+                                    </Grid>
+                                </Grid.Container>
+                            </Card.Body>
+                        </Card>
+                    </Container>
+                </Grid>
+                <Grid xs={12} md={6}>
+                    <Container>
+                        <Text h5 size={20}>
+                            Web Technologies
+                        </Text>
+                        <Card css={{marginTop:'$8', marginBottom:'$8'}}>
+                            <Card.Body>
+                                <Grid.Container gap={2} justify="center" css={{color:'$white'}}> 
+                                    <Grid >
+                                        <Link>
+                                            <Card css={{background:'transparent'}}>
+                                                <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
+                                                    <i class="fa-brands fa-square-js"></i>
+                                                    <Text h3>JavaScript</Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Link>
+                                    </Grid>
+                                    <Grid >
+                                        <Link>
+                                            <Card css={{background:'transparent'}}>
+                                                <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
+                                                    <i class="fa-brands fa-html5"></i>
+                                                    <Text h3>HTML5</Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Link>
+                                    </Grid>
+                                    <Grid >
+                                        <Link>
+                                            <Card css={{background:'transparent'}}>
+                                                <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
+                                                    <i class="fa-brands fa-css3-alt"></i>
+                                                    <Text h3>CSS</Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Link>
+                                    </Grid>
+                                </Grid.Container>
+                            </Card.Body>
+                        </Card>
+                    </Container>
+                    <Container>
+                        <Text h5 size={20}>
+                            Other
+                        </Text>
+                        <Card css={{marginTop:'$8', marginBottom:'$8'}}>
+                            <Card.Body>
+                                <Grid.Container gap={2} justify="center" css={{color:'$white'}}> 
+                                    <Grid >
+                                        <Link>
+                                            <Card css={{background:'transparent'}}>
+                                                <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
+                                                    <iconify-icon icon="bi:git"></iconify-icon>
+                                                    <Text h3>Git</Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Link>
+                                    </Grid>
+                                    <Grid >
+                                        <Link>
+                                            <Card css={{background:'transparent'}}>
+                                                <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
+                                                    <iconify-icon icon="solar:figma-linear"></iconify-icon>
+                                                    <Text h3>Figma</Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Link>
+                                    </Grid>
+                                    <Grid >
+                                        <Link>
+                                            <Card css={{background:'transparent'}}>
+                                                <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
+                                                    <iconify-icon icon="simple-icons:postman"></iconify-icon>
+                                                    <Text h3>Postman</Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Link>
+                                    </Grid>
+                                </Grid.Container>
+                            </Card.Body>
+                        </Card>
+                    </Container>
+                </Grid>
+            </Grid.Container>
+            <Grid.Container gap={2} justify="center" css={{marginTop:'$8'}}>
+                <Grid xs={12} md={6}>
+                    <Container>
+                        <Text h5 size={20}>
+                            Frameworks & Libraries
+                        </Text>
+                        <Card css={{marginTop:'$8', marginBottom:'$8'}}>
+                            <Card.Body>
+                                <Grid.Container gap={2} justify="center" css={{color:'$white'}}> 
+                                    <Grid >
+                                        <Link>
+                                            <Card css={{background:'transparent'}}>
+                                                <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
+                                                    <i class="fa-brands fa-react"></i>
+                                                    <Text h3>ReactJS</Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Link>
+                                    </Grid>
+                                    <Grid >
+                                        <Link>
+                                            <Card css={{background:'transparent'}}>
+                                                <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
+                                                    <i class="fa-brands fa-node-js"></i>
+                                                    <Text h3>ExpressJS</Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Link>
+                                    </Grid>
+                                    <Grid >
+                                        <Link>
+                                            <Card css={{background:'transparent'}}>
+                                                <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
+                                                    <iconify-icon icon="simple-icons:django"></iconify-icon>
+                                                    <Text h3>Django</Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Link>
+                                    </Grid>
+                                    <Grid >
+                                        <Link>
+                                            <Card css={{background:'transparent'}}>
+                                                <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
+                                                    <iconify-icon icon="material-symbols:flutter"></iconify-icon>
+                                                    <Text h3>Flutter</Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Link>
+                                    </Grid>
+                                </Grid.Container>
+                            </Card.Body>
+                        </Card>
+                    </Container>
+                </Grid>
+                <Grid xs={12} md={6}>
+                    <Container>
+                        <Text h5 size={20}>
+                            Database
+                        </Text>
+                        <Card css={{marginTop:'$8', marginBottom:'$8'}}>
+                            <Card.Body>
+                                <Grid.Container gap={2} justify="center" css={{color:'$white'}}> 
+                                    <Grid >
+                                        <Link>
+                                            <Card css={{background:'transparent'}}>
+                                                <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
+                                                    <iconify-icon icon="devicon-plain:mysql"></iconify-icon>
+                                                    <Text h3>MySQL</Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Link>
+                                    </Grid>
+                                    <Grid >
+                                        <Link>
+                                            <Card css={{background:'transparent'}}>
+                                                <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
+                                                    <iconify-icon icon="bxl:mongodb"></iconify-icon>
+                                                    <Text h3>MongoDB</Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Link>
+                                    </Grid>
+                                    <Grid >
+                                        <Link>
+                                            <Card css={{background:'transparent'}}>
+                                                <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
+                                                    <iconify-icon icon="mdi:firebase"></iconify-icon>
+                                                    <Text h3>Firebase</Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Link>
+                                    </Grid>
+                                    <Grid >
+                                        <Link>
+                                            <Card css={{background:'transparent'}}>
+                                                <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
+                                                    <iconify-icon icon="simple-icons:sqlite"></iconify-icon>
+                                                    <Text h3>SQLite</Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Link>
+                                    </Grid>
+                                </Grid.Container>
+                            </Card.Body>
+                        </Card>
+                    </Container>
+                </Grid>
+            </Grid.Container>
+
+
+
+            <hr style={{border:'solid 2px', margin:'40px'}}/>
+
+            <Text size={40} css={{textAlign:'center', fontWeight:'$extrabold', fontFamily:'monospace'}}>
+                Services
+            </Text>
+
+
         </div>
     )
 }

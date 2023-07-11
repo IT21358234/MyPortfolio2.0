@@ -114,7 +114,7 @@ export default function Body({onToggleTheme}) {
                         }
                         {isDark}
                     </Navbar.Link>
-                    <Navbar.Link color="inherit" href="#">
+                    {/*<Navbar.Link color="inherit" href="#">
                         Login
                     </Navbar.Link>
                     
@@ -122,7 +122,7 @@ export default function Body({onToggleTheme}) {
                         <Button auto flat as={Link} href="#">
                             Sign Up
                         </Button>
-                    </Navbar.Item>
+                    </Navbar.Item>*/}
                 </Navbar.Content>
             </Navbar>
             <Content/>

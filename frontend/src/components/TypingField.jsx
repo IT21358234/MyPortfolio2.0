@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Text } from '@nextui-org/react';
 
-const strings = ['Full Stack Web Developer', 'UI/UX Designer', 'Native Android Developer', 'Software Developer'];
+const strings = ['Full Stack Web Developer.', 'UI/UX Designer.', 'Native Android Developer.', 'Software Developer.'];
 const typingSpeed = 100; // Speed in milliseconds for each character
 
 function TypingField() {
