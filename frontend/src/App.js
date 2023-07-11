@@ -37,7 +37,7 @@ function App() {
   return (
     <div >
       <NextUIProvider theme={isDark ? darkTheme : lightTheme}>
-        <Body/>
+        <Body onToggleTheme={handleChangeIsDark}/>
       </NextUIProvider>
     </div>
   );
