@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, Container, Grid, Row, Text, Col, Spacer, Button, Link} from '@nextui-org/react'
+import {Card, Container, Grid, Row, Text, Col, Spacer, Button, Link, Image} from '@nextui-org/react'
 import TypingField from './TypingField'
 import BlinkingCursor from './BlinkingCursor'
 
@@ -45,12 +45,12 @@ export default function Content() {
                                 </Text>
                             </Card.Body>
                         </Card>
-                        <Text h4>
+                        <Text h4 css={{textAlign:'center'}}>
                             Find Me On
                         </Text>
 
 
-                        <Grid.Container gap={2} justify="space-between" css={{color:'$white'}}> 
+                        <Grid.Container gap={2} justify="center" css={{color:'$white'}}> 
                             <Grid >
                                 <Link href='https://github.com/IT21358234'>
                                     <Card style={cardStyles}>
@@ -104,17 +104,22 @@ export default function Content() {
                 </Grid>
                 <Grid xs={12} md={6}>
                     <Container>
-                        <Card style={cardStyles} css={{ marginBottom:'$8', height:'56vh'}}>
+                        <Card  css={{ marginBottom:'$8', height:'56vh', paddingTop:'$-10', background:'transparent'}}>
                             <Card.Body>
-                                
+                                <Image
+                                    height={600}
+                                    src="/me.png"
+                                    alt="Default Image"
+                                    objectFit="cover"
+                                />
                             </Card.Body>
                         </Card>
                         
-                        <Text h4>
+                        <Text h4 css={{textAlign:'center'}}>
                             Contact Me
                         </Text>
 
-                        <Grid.Container gap={2} justify="space-between" css={{color:'$white'}}> 
+                        <Grid.Container gap={2} justify="center" css={{color:'$white'}}> 
                             <Grid >
                                 <Link href='https://github.com/IT21358234'>
                                     <Card style={cardStyles}>
