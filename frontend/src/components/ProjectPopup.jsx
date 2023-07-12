@@ -10,12 +10,12 @@ export default function ProjectPopup({title, description, githubLink, linkedinLi
   return (
     <div>
       
-      <Link css={{fontWeight:'$bold'}} onPress={() => setVisible(true)}>SEE MORE &nbsp;<i class="fa-solid fa-arrow-right-long"></i></Link>
+      <Link css={{fontWeight:'$bold'}} onPress={() => setVisible(true)}>SEE MORE &nbsp;<i class="fa-solid fa-arrow-right-long" ></i></Link>
     
       <Modal
         closeButton
         scroll
-        width="600px"
+        width="80%"
         aria-labelledby="modal-title"
         aria-describedby="modal-description"
         {...bindings}

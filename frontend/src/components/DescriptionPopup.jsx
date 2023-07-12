@@ -13,7 +13,7 @@ export default function DescriptionPopup({title, description}) {
       <Modal
         closeButton
         scroll
-        width="600px"
+        width="80%"
         aria-labelledby="modal-title"
         aria-describedby="modal-description"
         {...bindings}
