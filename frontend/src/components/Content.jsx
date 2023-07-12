@@ -249,7 +249,7 @@ export default function Content() {
                         </Card>
                     </Container>
                 </Grid>
-                <Grid xs={12} md={6}>
+                <Grid xs={12} md={3}>
                     <Container>
                         <Text h5 size={20}>
                             Web Technologies
@@ -291,6 +291,8 @@ export default function Content() {
                             </Card.Body>
                         </Card>
                     </Container>
+                </Grid>
+                <Grid xs={12} md={3}>
                     <Container>
                         <Text h5 size={20}>
                             Other
