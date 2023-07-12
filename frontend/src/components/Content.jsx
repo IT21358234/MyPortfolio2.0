@@ -1,23 +1,30 @@
 import React from 'react'
-import {Card, Container, Grid, Row, Text, Col, Spacer, Button, Link, Image} from '@nextui-org/react'
+import {Card, Container, Grid, Row, Text, Col, Spacer, Button, Link, Image, Badge, useTheme, Input, Textarea} from '@nextui-org/react'
 import TypingField from './TypingField'
 import BlinkingCursor from './BlinkingCursor'
+import DescriptionPopup from './DescriptionPopup'
+import ProjectPopup from './ProjectPopup'
+import XLSX from 'xlsx'
 
 export default function Content() {
     const cardStyles = {
         background: 'linear-gradient(to right, #FFB938 -20%, #f33d4e 100%)',
     }
 
+    const webDebvelopment = "With expertise in the MERN stack (MongoDB, Express.js, React, and Node.js), I offer comprehensive full-stack web development services. From designing and implementing efficient backend APIs using Node.js and Express.js to developing dynamic and interactive user interfaces with React, I can help bring your web application ideas to life. Leveraging MongoDB as the database, I ensure seamless data management and create scalable and performant web solutions tailored to your specific requirements. Whether it's building a responsive e-commerce platform or a modern web application, I am well-versed in the latest tools and technologies of the MERN stack to deliver high-quality and robust web solutions.Additionally, I have besic kowledge about developing web app combining Django and react."
+    const appDevelopment = ""
+
+
     return (
         <div>
             <Grid.Container gap={2} justify="center" css={{marginTop:'$8'}}>
-                <Grid xs={12} md={6}>
+                <Grid xs={12} md={8}>
                     <Container>
                         <Text
                             h4
                             weight="bold"
                         >
-                            Hi There,
+                            Hi There, 
                         </Text>
                         <Text
                             h1
@@ -102,12 +109,12 @@ export default function Content() {
                     </Container>
 
                 </Grid>
-                <Grid xs={12} md={6}>
+                <Grid xs={12} md={4}>
                     <Container>
-                        <Card  css={{ marginBottom:'$8', height:'56vh'}}>
+                        <Card  css={{ marginBottom:'$8', height:'fit-content'}}>
                             <Card.Body>
                                 <Image
-                                    height={308}
+                                    height={300}
                                     src="/me.png"
                                     alt="Default Image"
                                     objectFit="cover"
@@ -153,7 +160,7 @@ export default function Content() {
                 </Grid>
             </Grid.Container>
             
-            <hr style={{border:'solid 2px', margin:'40px'}}/>
+            <hr style={{border:'solid 1px', margin:'40px'}}/>
 
             <Text size={40} css={{textAlign:'center', fontWeight:'$extrabold', fontFamily:'monospace'}}>
                 Skills
@@ -438,12 +445,436 @@ export default function Content() {
 
 
 
-            <hr style={{border:'solid 2px', margin:'40px'}}/>
+            <hr style={{border:'solid 1px', margin:'40px'}}/>
 
             <Text size={40} css={{textAlign:'center', fontWeight:'$extrabold', fontFamily:'monospace'}}>
                 Services
             </Text>
 
+            
+            <Grid.Container gap={2} justify="center">
+                <Grid xs={12} md={6} lg={0}>
+                    <Container>
+                        <Card css={{marginTop:'$8', marginBottom:'$8'}}>
+                            <Card.Body>
+                                <Grid.Container justify='space-between'>
+                                    <Grid> 
+                                        <Text
+                                            h3
+                                            css={{
+                                            textGradient: "45deg, $yellow600 -20%, $red600 100%",
+                                            }}
+                                            weight="bold"
+                                        >
+                                            Full Stack Web Development
+                                        </Text>
+                                    </Grid>
+                                    <Grid>
+                                        <Grid.Container justify='space-between' gap={1}>
+                                            <Grid>
+                                                <Badge variant='bordered' size="md" color='warning' css={{background:'linear-gradient(to right, #FFB938, #f33d4e)', color:'White', fontWeight:'$bold'}}>MERN</Badge>
+                                            </Grid>
+                                            <Grid>
+                                                <Badge variant='bordered' size="md" color='warning' css={{background:'linear-gradient(to right, #FFB938, #f33d4e)', color:'White', fontWeight:'$bold'}}>React + Django</Badge>                                          
+                                            </Grid>
+                                        </Grid.Container>
+                                        
+                                    </Grid>
+                                </Grid.Container>
+                                
+                                <Text b>
+                                    
+                                <i class="fa-solid fa-code"></i>    Having good experience and best knowledge about Web Developing using MERN stack<br/>
+                                </Text>
+                                <Text  b>
+                                <i class="fa-solid fa-code"></i>    Having experience to design atractive and user friendly UI and develop them using React<br/>
+                                </Text>
+                                <Text  b>
+                                <i class="fa-solid fa-code"></i>    Additionaly, Having besic knowledge about Web Developing using combination of React and Django
+                                        
+                                </Text>
+                                <DescriptionPopup title='Full Stack Web Development' description={webDebvelopment}/>
+                                
+                            </Card.Body>
+                        </Card>
+                    </Container>
+                </Grid>
+                <Grid xs={12} md={6} lg={0}>
+                    <Container>
+                        <Card css={{marginTop:'$8', marginBottom:'$8'}}>
+                            <Card.Body>
+                                <Grid.Container justify='space-between'>
+                                    <Grid>
+                                        <Text
+                                            h3
+                                            css={{
+                                            textGradient: "45deg, $yellow600 -20%, $red600 100%",
+                                            }}
+                                            weight="bold"
+                                        >
+                                            Android App Development
+                                        </Text>
+                                    </Grid>
+                                    <Grid>
+                                        <Grid.Container justify='space-between' gap={1}>
+                                            <Grid>
+                                                <Badge variant='bordered' size="md" color='warning' css={{background:'linear-gradient(to right, #FFB938, #f33d4e)', color:'White', fontWeight:'$bold'}}>Kotlin</Badge>
+                                            </Grid>
+                                            <Grid>
+                                                <Badge variant='bordered' size="md" color='warning' css={{background:'linear-gradient(to right, #FFB938, #f33d4e)', color:'White', fontWeight:'$bold'}}>Flutter</Badge>                                          
+                                            </Grid>
+                                            <Grid>
+                                                <Badge variant='bordered' size="md" color='warning' css={{background:'linear-gradient(to right, #FFB938, #f33d4e)', color:'White', fontWeight:'$bold'}}>Dart</Badge>                                          
+                                            </Grid>
+                                        </Grid.Container>
+                                        
+                                    </Grid>
+                                </Grid.Container>
+                                
+                                <Text b>
+                                    
+                                <i class="fa-solid fa-code"></i>    Having good experience and best knowledge about Web Developing using MERN stack<br/>
+                                </Text>
+                                <Text  b>
+                                <i class="fa-solid fa-code"></i>    Having experience to design atractive and user friendly UI and develop them using React<br/>
+                                </Text>
+                                <Text  b>
+                                <i class="fa-solid fa-code"></i>    Additionaly, Having besic knowledge about Web Developing using combination of React and Django
+                                        
+                                </Text>
+                                <DescriptionPopup title='Android App Development' description={webDebvelopment}/>
+                            </Card.Body>
+                        </Card>
+                    </Container>
+                </Grid>
+                <Grid xs={12} md={6} lg={0}>
+                    <Container>
+                        <Card css={{marginTop:'$8', marginBottom:'$8'}}>
+                            <Card.Body>
+                            <Grid.Container justify='space-between'>
+                                    <Grid>
+                                        <Text
+                                            h3
+                                            css={{
+                                            textGradient: "45deg, $yellow600 -20%, $red600 100%",
+                                            }}
+                                            weight="bold"
+                                        >
+                                            UI/UX Designing & Developing
+                                        </Text>
+                                    </Grid>
+                                    <Grid>
+                                        <Grid.Container justify='space-between' gap={1}>
+                                            <Grid>
+                                                <Badge variant='bordered' size="md" color='warning' css={{background:'linear-gradient(to right, #FFB938, #f33d4e)', color:'White', fontWeight:'$bold'}}>Figma</Badge>
+                                            </Grid>
+                                            <Grid>
+                                                <Badge variant='bordered' size="md" color='warning' css={{background:'linear-gradient(to right, #FFB938, #f33d4e)', color:'White', fontWeight:'$bold'}}>React</Badge>                                          
+                                            </Grid>
+                                            <Grid>
+                                                <Badge variant='bordered' size="md" color='warning' css={{background:'linear-gradient(to right, #FFB938, #f33d4e)', color:'White', fontWeight:'$bold'}}>HTML</Badge>                                          
+                                            </Grid>
+                                            <Grid>
+                                                <Badge variant='bordered' size="md" color='warning' css={{background:'linear-gradient(to right, #FFB938, #f33d4e)', color:'White', fontWeight:'$bold'}}>xml</Badge>                                          
+                                            </Grid>
+                                        </Grid.Container>
+                                        
+                                    </Grid>
+                                </Grid.Container>
+                                
+                                <Text b>
+                                    
+                                <i class="fa-solid fa-code"></i>    Having good experience and best knowledge about Web Developing using MERN stack<br/>
+                                </Text>
+                                <Text  b>
+                                <i class="fa-solid fa-code"></i>    Having experience to design atractive and user friendly UI and develop them using React<br/>
+                                </Text>
+                                <Text  b>
+                                <i class="fa-solid fa-code"></i>    Additionaly, Having besic knowledge about Web Developing using combination of React and Django
+                                        
+                                </Text>
+                                <DescriptionPopup title='UI/UX Designing & Developing' description={webDebvelopment}/>
+                            </Card.Body>
+                        </Card>
+                    </Container>
+                </Grid>
+                <Grid xs={12} md={6} lg={0}>
+                    <Container>
+                        <Card css={{marginTop:'$8', marginBottom:'$8'}}>
+                            <Card.Body>
+                            <Grid.Container justify='space-between'>
+                                    <Grid>
+                                        <Text
+                                            h3
+                                            css={{
+                                            textGradient: "45deg, $yellow600 -20%, $red600 100%",
+                                            }}
+                                            weight="bold"
+                                        >
+                                            WPF Development
+                                        </Text>
+                                    </Grid>
+                                    <Grid>
+                                        <Grid.Container justify='space-between' gap={1}>
+                                            <Grid>
+                                                <Badge variant='bordered' size="md" color='warning' css={{background:'linear-gradient(to right, #FFB938, #f33d4e)', color:'White', fontWeight:'$bold'}}>C#</Badge>
+                                            </Grid>
+                                            <Grid>
+                                                <Badge variant='bordered' size="md" color='warning' css={{background:'linear-gradient(to right, #FFB938, #f33d4e)', color:'White', fontWeight:'$bold'}}>.NET</Badge>                                          
+                                            </Grid>
+                                        </Grid.Container>
+                                        
+                                    </Grid>
+                                </Grid.Container>
+                                
+                                <Text b>
+                                    
+                                <i class="fa-solid fa-code"></i>    Having good experience and best knowledge about Web Developing using MERN stack<br/>
+                                </Text>
+                                <Text  b>
+                                <i class="fa-solid fa-code"></i>    Having experience to design atractive and user friendly UI and develop them using React<br/>
+                                </Text>
+                                <Text  b>
+                                <i class="fa-solid fa-code"></i>    Additionaly, Having besic knowledge about Web Developing using combination of React and Django
+                                        
+                                </Text>
+                                <DescriptionPopup title='WPF Development' description={webDebvelopment}/>
+                            </Card.Body>
+                        </Card>
+                    </Container>
+                </Grid>
+            </Grid.Container>
+
+
+            <hr style={{border:'solid 1px', margin:'40px'}}/>
+
+            <Text size={40} css={{textAlign:'center', fontWeight:'$extrabold', fontFamily:'monospace'}}>
+                Projects
+            </Text>
+
+            
+            <Grid.Container  justify="center" css={{marginTop:'$8', marginBottom:'$8'}}>
+                <Grid xs={12} sm={4}>
+                    <Container>
+                        <Card css={{marginTop:'$8', marginBottom:'$8'}}>
+                            <Card.Body>
+                                <Image src='/' alt='Project Poster' height={100} css={{width:'100%', border:'2px solid', borderRadius:'$base'}}/>
+                                <Text
+                                    h4
+                                    css={{
+                                        textGradient: "45deg, $yellow600 -20%, $red600 100%",
+                                        marginTop:'$5'
+                                    }}
+                                    weight="bold"
+                                >
+                                    Movie Maven - Admin
+                                </Text>
+                                <Text css={{textAlign:'justify'}}>
+                                    This is a Web System for managing the 'MovieMaven' Movie Downloading WebSite. MERN Stack is used to develop this.
+                                </Text>
+                                <ProjectPopup title='Encore Thrift Store' description='' githubLink='' linkedinLink=''/>
+                            </Card.Body>
+                        </Card>
+                    </Container>
+                </Grid>
+                <Grid xs={12} sm={4}>
+                    <Container>
+                        <Card css={{marginTop:'$8', marginBottom:'$8'}}>
+                            <Card.Body>
+                                <Image src='/' alt='Project Poster' height={100} css={{width:'100%', border:'2px solid', borderRadius:'$base'}}/>
+                                <Text
+                                    h4
+                                    css={{
+                                        textGradient: "45deg, $yellow600 -20%, $red600 100%",
+                                        marginTop:'$5'
+                                    }}
+                                    weight="bold"
+                                >
+                                    Encore Thrift Store
+                                </Text>
+                                <Text css={{textAlign:'justify'}}>
+                                    This is a Web System for managing the Encore Thirft Store. MERN Stack is used to develop this
+                                </Text>
+                                <ProjectPopup title='Encore Thrift Store' description='' githubLink='' linkedinLink=''/>
+                            </Card.Body>
+                        </Card>
+                        
+                    </Container>
+                </Grid>
+                <Grid xs={12} sm={4}>
+                    <Container>
+                        <Card css={{marginTop:'$8', marginBottom:'$8'}}>
+                            <Card.Body>
+                                <Image src='/' alt='Project Poster' height={100} css={{width:'100%', border:'2px solid', borderRadius:'$base'}}/>
+                                <Text
+                                    h4
+                                    css={{
+                                        textGradient: "45deg, $yellow600 -20%, $red600 100%",
+                                        marginTop:'$5'
+                                    }}
+                                    weight="bold"
+                                >
+                                    Travelite
+                                </Text>
+                                <Text css={{textAlign:'justify'}}>
+                                    This is a Mobile App that implemented to improve tourism in Sri Lanka. This App was implemented for toursts, hotel and restaurant owners and transport providers. This is a Android Native Development using Kotlin
+                                </Text>
+                                <ProjectPopup title='Travelite' description='' githubLink='' linkedinLink=''/>
+                            </Card.Body>
+                        </Card>
+                    </Container>
+                </Grid>
+                
+            </Grid.Container>
+
+
+            <Grid.Container gap={1} justify="center">
+                <Grid xs={12} sm={4}>
+                    <Container>
+                        <Card css={{marginTop:'$8', marginBottom:'$8'}}>
+                            <Card.Body>
+                                <Image src='/' alt='Project Poster' height={100} css={{width:'100%', border:'2px solid', borderRadius:'$base'}}/>
+                                <Text
+                                    h4
+                                    css={{
+                                        textGradient: "45deg, $yellow600 -20%, $red600 100%",
+                                        marginTop:'$5'
+                                    }}
+                                    weight="bold"
+                                >
+                                    Zoho Online Store
+                                </Text>
+                                <Text css={{textAlign:'justify'}}>
+                                    This is a Web System to mange the inventory of Zoho Online Store. This was implemented with all function of Stock Manger, Purchasing Manager & Shipping Manager. HTML, CSS, JS and Java Sevlet were used.
+                                </Text>
+                                <ProjectPopup title='Zoho Online Store' description='' githubLink='' linkedinLink=''/>
+                            </Card.Body>
+                        </Card>
+                    </Container>
+                </Grid>
+                <Grid xs={12} sm={4}>
+                    <Container>
+                        <Card css={{marginTop:'$8', marginBottom:'$8'}}>
+                            <Card.Body>
+                                <Image src='/' alt='Project Poster' height={100} css={{width:'100%', border:'2px solid', borderRadius:'$base'}}/>
+                                <Text
+                                    h4
+                                    css={{
+                                        textGradient: "45deg, $yellow600 -20%, $red600 100%",
+                                        marginTop:'$5'
+                                    }}
+                                    weight="bold"
+                                >
+                                    YourChoice Online Store
+                                </Text>
+                                <Text css={{textAlign:'justify'}}>
+                                    This is a E commerce Web Site. Users can purchase various thing under various categories. HTML, CSS, JS, PHP, SQL are used to implement this site
+                                </Text>
+                                <ProjectPopup title='Encore Thrift Store' description='' githubLink='' linkedinLink=''/>
+                            </Card.Body>
+                        </Card>
+                    </Container>
+                </Grid>
+                <Grid xs={12} sm={4}>
+                    <Container>
+                        <Card css={{marginTop:'$8', marginBottom:'$8'}}>
+                            <Card.Body>
+                                <Image src='/' alt='Project Poster' height={100} css={{width:'100%', border:'2px solid', borderRadius:'$base'}}/>
+                                <Text
+                                    h4
+                                    css={{
+                                        textGradient: "45deg, $yellow600 -20%, $red600 100%",
+                                        marginTop:'$5'
+                                    }}
+                                    weight="bold"
+                                >
+                                    Encore Thrift Store
+                                </Text>
+                                <Text css={{textAlign:'justify'}}>
+                                    This is a Web System for managing the Encore Thirft Store. MERN Stack is used to develop this
+                                </Text>
+                                <ProjectPopup title='Encore Thrift Store' description='' githubLink='' linkedinLink=''/>
+                            </Card.Body>
+                        </Card>
+                        
+                    </Container>
+                </Grid>
+                
+                
+            </Grid.Container>
+
+
+            <hr style={{border:'solid 1px', margin:'40px'}}/>
+
+            <Text size={40} css={{textAlign:'center', fontWeight:'$extrabold', fontFamily:'monospace'}}>
+                Contact
+            </Text>
+
+            <Grid.Container gap={1} justify="center" css={{marginTop:'$8', marginBottom:'$8'}}>
+                <Grid xs={12} sm={4}>
+                    <Container>
+                        <Card css={{marginTop:'$8', marginBottom:'$8'}}>
+                            <Card.Body>
+
+                            </Card.Body>
+                        </Card>
+                    </Container>
+                </Grid>
+                <Grid xs={12} sm={8}>
+                    <Container>
+                        <Card css={{marginTop:'$8', marginBottom:'$8',padding:'$12'}}>
+                            <Card.Body css={{paddingTop:'$10'}}>
+                                <Input clearable bordered labelPlaceholder="Name"  color='warning' css={{border:'2px solid $yellow600', }}/>
+                            </Card.Body>
+                            <Card.Body css={{paddingTop:'$10'}}>
+                                <Input clearable bordered labelPlaceholder="Email" type='email' color='warning' css={{border:'2px solid $yellow600', }}/>
+                            </Card.Body>
+                            <Card.Body css={{paddingTop:'$10'}}>
+                                <Input clearable bordered labelPlaceholder="Subject"  color='warning' css={{border:'2px solid $yellow600'}}/>
+                            </Card.Body>
+                            <Card.Body css={{paddingTop:'$10'}}>
+                                <Textarea
+                                    bordered
+                                    color='warning'
+                                    css={{border:'2px solid $yellow600'}}
+                                    labelPlaceholder="Bordered Textarea"
+                                    minRows={10}
+                                />
+                            </Card.Body>
+                            <Grid.Container justify='space-around'>
+                                <Grid>
+                                    <Button 
+                                        auto 
+                                        css={{ 
+                                            borderRadius: '$xs', 
+                                            border: '2px solid $yellow600',
+                                            background: 'linear-gradient(to right, #FFB938, #f33d4e)',
+                                            color: '$white',
+                                            height: '$15', 
+                                            boxShadow: '$md', 
+                                            margin:'$8',
+                                            fontSize:'$1xl',
+                                            '&:hover': {
+                                            background: 'linear-gradient(to left, #FFB938, #f33d4e)',
+                                            borderColor:'$red600'
+                                            
+                                            },
+                                        }}
+                                        >
+                                        Send Message
+                                    </Button>
+                                </Grid>
+                            </Grid.Container>
+                        </Card>
+                    </Container>
+                    
+                </Grid>
+            </Grid.Container>
+
+            <hr style={{border:'solid 1px', margin:'40px', marginBottom:'10px'}}/>
+            <Text css={{textAlign:'center', marginBottom:'20px'}}>
+                © 2023. All rights reserved by Sanjana Nilanka.
+            </Text>
 
         </div>
     )

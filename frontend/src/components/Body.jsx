@@ -149,6 +149,7 @@ export default function Body({onToggleTheme}) {
                         </Button>
                     </Navbar.Item>*/}
                     <Navbar.Item hideIn='xs'>
+                        <a href='/SanjanaNilankaResume.pdf' download>
                         <Button 
                             auto 
                             css={{ 
@@ -166,6 +167,7 @@ export default function Body({onToggleTheme}) {
                             >
                                Download Resume
                         </Button>
+                        </a>
                     </Navbar.Item>
                     <Navbar.Toggle showIn="xs" />
                 </Navbar.Content>
