@@ -38,12 +38,12 @@ export default function Body({onToggleTheme}) {
 
 
 
-    const[isHomeActive, setIsHomeActive] = useState(true)
+   /* const[isHomeActive, setIsHomeActive] = useState(true)
     const[isSkillsActive, setIsSkillsActive] = useState(false)
     const[isEducationActive, setIsEducationActive] = useState(false)
     const[isContactActive, setIsContactActive] = useState(false)
     const[isServicesActive, setIsServicesActive] = useState(false)
-    const[isProjectActive, setIsProjectActive] = useState(false)
+    const[isProjectActive, setIsProjectActive] = useState(false)*/
 
     return (
         <div>
@@ -63,12 +63,12 @@ export default function Body({onToggleTheme}) {
                     </Text>
                 </Navbar.Brand>
                 <Navbar.Content hideIn="sm" variant="default" enableCursorHighlight activeColor='warning'> 
-                    <Navbar.Link href="#" isActive={isHomeActive}>Home</Navbar.Link>
-                    <Navbar.Link href="#skills" isActive={isSkillsActive} >Skills</Navbar.Link>
-                    <Navbar.Link href="#services" isActive={isServicesActive}>Services</Navbar.Link>
-                    <Navbar.Link href="#education" isActive={isEducationActive}>Education</Navbar.Link>
-                    <Navbar.Link href="#projects" isActive={isProjectActive}>Projects</Navbar.Link>
-                    <Navbar.Link href="#contact" isActive={isContactActive}>Contact</Navbar.Link>
+                    <Navbar.Link href="#" >Home</Navbar.Link>
+                    <Navbar.Link href="#skills"  >Skills</Navbar.Link>
+                    <Navbar.Link href="#services" >Services</Navbar.Link>
+                    <Navbar.Link href="#education" >Education</Navbar.Link>
+                    <Navbar.Link href="#projects" >Projects</Navbar.Link>
+                    <Navbar.Link href="#contact" >Contact</Navbar.Link>
                 </Navbar.Content>
                 <Navbar.Content>
                     <Grid.Container gap={0} css={{ d: 'flex', flexWrap: 'nowrap' }}>
