@@ -60,7 +60,7 @@ export default function BodyTest() {
         <Navbar.Content>
                     <Grid.Container gap={0} css={{ d: 'flex', flexWrap: 'nowrap' }}>
                         <Grid>
-                            <Navbar.Link color="inherit" href="#">
+                            <Navbar.Link color="inherit" href="https://github.com/IT21358234">
                                 <Card css={{background:'transparent'}}>
                                     <Card.Body css={{fontSize:'$3xl'}}>
                                         
@@ -71,7 +71,7 @@ export default function BodyTest() {
                             </Navbar.Link>    
                         </Grid>
                         <Grid>
-                            <Navbar.Link color="inherit" href="#">
+                            <Navbar.Link color="inherit" href="https://www.linkedin.com/in/sanjana-nilanka-02091319a/">
                                 <Card css={{background:'transparent'}}>
                                     <Card.Body css={{fontSize:'$3xl'}}>
                                         

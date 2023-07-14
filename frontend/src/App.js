@@ -10,7 +10,8 @@ import {useEffect, useState} from 'react';
 const lightTheme = createTheme({
   type: 'light',
   theme: {
-   
+   colors:{
+   }
   },
   
 })

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Text } from '@nextui-org/react';
+import { Grid, Text } from '@nextui-org/react';
+import BlinkingCursor from './BlinkingCursor';
 
 const strings = ['Full Stack Web Developer.', 'UI/UX Designer.', 'Native Android Developer.', 'Software Developer.'];
-const typingSpeed = 100; // Speed in milliseconds for each character
+const typingSpeed = 200; // Speed in milliseconds for each character
 
 function TypingField() {
   const [currentStringIndex, setCurrentStringIndex] = useState(0);
@@ -14,7 +15,7 @@ function TypingField() {
         setTimeout(() => {
           setCurrentStringIndex((prevIndex) => (prevIndex + 1) % strings.length);
           setCurrentString('');
-        }, 1000);
+        }, 3000);
       } else {
         setTimeout(() => {
           setCurrentString((prevString) => {
@@ -34,7 +35,15 @@ function TypingField() {
 
   return (
     <div>
-      <Text h1 size={35}>a {currentString}</Text>
+      <Grid.Container justify='space-between'>
+        <Grid>
+          <Text h1 size={35}>a {currentString} </Text>
+        </Grid>
+        <Grid>
+        <Text h1 size={35}><BlinkingCursor/></Text>
+        </Grid>
+      </Grid.Container>
+      
     </div>
   );
 }

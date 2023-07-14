@@ -44,6 +44,13 @@ export default function Body({onToggleTheme}) {
         background: 'linear-gradient(to left, #FFB938 -20%, #f33d4e 100%)',
     }
 
+    const[isHomeActive, setIsHomeActive] = useState(true)
+    const[isSkillsActive, setIsSkillsActive] = useState(false)
+    const[isEducationActive, setIsEducationActive] = useState(false)
+    const[isContactActive, setIsContactActive] = useState(false)
+    const[isServicesActive, setIsServicesActive] = useState(false)
+    const[isProjectActive, setIsProjectActive] = useState(false)
+
     return (
         <div>
             <Navbar isBordered variant='sticky'>
@@ -61,18 +68,18 @@ export default function Body({onToggleTheme}) {
                         &#60;SanjanaNilanka /&#62;
                     </Text>
                 </Navbar.Brand>
-                <Navbar.Content hideIn="sm" variant="default" enableCursorHighlight>
-                    <Navbar.Link href="#">Home</Navbar.Link>
-                    <Navbar.Link href="#">About</Navbar.Link>
-                    <Navbar.Link href="#">Services</Navbar.Link>
-                    <Navbar.Link href="#">Education</Navbar.Link>
-                    <Navbar.Link href="#">Project</Navbar.Link>
-                    <Navbar.Link href="#">Contact</Navbar.Link>
+                <Navbar.Content hideIn="sm" variant="default" enableCursorHighlight activeColor='warning'> 
+                    <Navbar.Link href="#" isActive={isHomeActive}>Home</Navbar.Link>
+                    <Navbar.Link href="#skills" isActive={isSkillsActive} >Skills</Navbar.Link>
+                    <Navbar.Link href="#services" isActive={isServicesActive}>Services</Navbar.Link>
+                    <Navbar.Link href="#education" isActive={isEducationActive}>Education</Navbar.Link>
+                    <Navbar.Link href="#projects" isActive={isProjectActive}>Projects</Navbar.Link>
+                    <Navbar.Link href="#contact" isActive={isContactActive}>Contact</Navbar.Link>
                 </Navbar.Content>
                 <Navbar.Content>
                     <Grid.Container gap={0} css={{ d: 'flex', flexWrap: 'nowrap' }}>
                         <Grid>
-                            <Navbar.Link color="inherit" href="#">
+                            <Navbar.Link color="inherit" href="https://github.com/IT21358234" target='_blank'> 
                                 <Card css={{background:'transparent'}}>
                                     <Card.Body css={{fontSize:'$3xl'}}>
                                         
@@ -83,7 +90,7 @@ export default function Body({onToggleTheme}) {
                             </Navbar.Link>    
                         </Grid>
                         <Grid>
-                            <Navbar.Link color="inherit" href="#">
+                            <Navbar.Link color="inherit" href="https://www.linkedin.com/in/sanjana-nilanka-02091319a/" target='_blank'>
                                 <Card css={{background:'transparent'}}>
                                     <Card.Body css={{fontSize:'$3xl'}}>
                                         
@@ -223,7 +230,7 @@ export default function Body({onToggleTheme}) {
                     </Navbar.CollapseItem>
                 </Navbar.Collapse>
             </Navbar>
-            <Content/>
+            <Content isDark={isDark}/>
         </div>
     )
 }

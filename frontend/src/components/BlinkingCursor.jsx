@@ -8,7 +8,7 @@ function BlinkingCursor() {
   };
 
   useEffect(() => {
-    const interval = setInterval(toggleVisibility, 500);
+    const interval = setInterval(toggleVisibility,1000);
 
     return () => {
       clearInterval(interval);

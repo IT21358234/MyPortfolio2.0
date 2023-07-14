@@ -1,12 +1,15 @@
-import React from 'react'
-import {Card, Container, Grid, Row, Text, Col, Spacer, Button, Link, Image, Badge, useTheme, Input, Textarea} from '@nextui-org/react'
+import React, {useState} from 'react'
+import {Card, Container, Grid, Row, Text, Col, Spacer, Button, Link, Image, Badge, useTheme, Input, Textarea, useSSR} from '@nextui-org/react'
 import TypingField from './TypingField'
 import BlinkingCursor from './BlinkingCursor'
 import DescriptionPopup from './DescriptionPopup'
 import ProjectPopup from './ProjectPopup'
 import XLSX from 'xlsx'
+import AutoTypingField from './AutoTypingField'
+import ToastMsg from './ToastMsg'
+import MessageSend from './MessageSend'
 
-export default function Content() {
+export default function Content({isDark}) {
     const cardStyles = {
         background: 'linear-gradient(to right, #FFB938 -20%, #f33d4e 100%)',
     }
@@ -14,6 +17,10 @@ export default function Content() {
     const webDebvelopment = "With expertise in the MERN stack (MongoDB, Express.js, React, and Node.js), I offer comprehensive full-stack web development services. From designing and implementing efficient backend APIs using Node.js and Express.js to developing dynamic and interactive user interfaces with React, I can help bring your web application ideas to life. Leveraging MongoDB as the database, I ensure seamless data management and create scalable and performant web solutions tailored to your specific requirements. Whether it's building a responsive e-commerce platform or a modern web application, I am well-versed in the latest tools and technologies of the MERN stack to deliver high-quality and robust web solutions.Additionally, I have besic kowledge about developing web app combining Django and react."
     const appDevelopment = ""
 
+    const  email = 'sanjananilankaperer@gmail.com'
+    const phone = '+94729449616'
+
+    const [isJavaToast, setIsJavaToast] = useState(false)
 
     return (
         <div>
@@ -24,7 +31,7 @@ export default function Content() {
                             h4
                             weight="bold"
                         >
-                            Hi There, 
+                            Hi There, {isDark && <span>Hello</span>}
                         </Text>
                         <Text
                             h1
@@ -38,7 +45,7 @@ export default function Content() {
                         </Text>
                         <Grid.Container>
                             <Grid>
-                                <TypingField/>
+                                <AutoTypingField/>
                             </Grid>
                         </Grid.Container>
                         <Card css={{marginTop:'$8', marginBottom:'$8'}}>
@@ -59,7 +66,7 @@ export default function Content() {
 
                         <Grid.Container gap={2} justify="center" css={{color:'$white'}}> 
                             <Grid >
-                                <Link href='https://github.com/IT21358234'>
+                                <Link href='https://github.com/IT21358234' target='_blank'>
                                     <Card style={cardStyles}>
                                         <Card.Body css={{fontSize:'$3xl',color:'$white', width:'70px', textAlign:'center'}}>
                                             <i class="fa fa-github" aria-hidden="true" ></i>
@@ -68,7 +75,7 @@ export default function Content() {
                                 </Link>
                             </Grid>
                             <Grid >
-                                <Link>
+                                <Link href='https://www.linkedin.com/in/sanjana-nilanka-02091319a/' target='_blank'>
                                     <Card style={cardStyles}>
                                         <Card.Body css={{fontSize:'$3xl',color:'$white', width:'70px', textAlign:'center'}}>
                                             <i class="fa fa-linkedin" aria-hidden="true" ></i>
@@ -77,7 +84,7 @@ export default function Content() {
                                 </Link>
                             </Grid>
                             <Grid >
-                                <Link>
+                                <Link href='https://www.instagram.com/nilanka_sn/' target='_blank'>
                                     <Card style={cardStyles}>
                                         <Card.Body css={{fontSize:'$3xl',color:'$white', width:'70px', textAlign:'center'}}>
                                             <i class="fa fa-instagram" aria-hidden="true" ></i>
@@ -86,7 +93,7 @@ export default function Content() {
                                 </Link>
                             </Grid>
                             <Grid >
-                                <Link>
+                                <Link href='https://twitter.com/Nilanka_SN' target='_blank'>
                                     <Card style={cardStyles}>
                                         <Card.Body css={{fontSize:'$3xl',color:'$white', width:'70px', textAlign:'center'}}>
                                             <i class="fa fa-twitter" aria-hidden="true" ></i>
@@ -95,7 +102,7 @@ export default function Content() {
                                 </Link>
                             </Grid>
                             <Grid >
-                                <Link>
+                                <Link href='https://web.facebook.com/nilanka.sanjana/' target='_blank'>
                                     <Card style={cardStyles}>
                                         <Card.Body css={{fontSize:'$3xl',color:'$white', width:'70px', textAlign:'center'}}>
                                             <i class="fa fa-facebook" aria-hidden="true"></i>
@@ -147,7 +154,7 @@ export default function Content() {
                             </Grid>
                             <Grid >
                                 <Link href='https://github.com/IT21358234'>
-                                    <Card style={cardStyles}>
+                                    <Card style={cardStyles} >
                                         <Card.Body css={{fontSize:'$3xl',color:'$white', width:'70px', textAlign:'center'}}>
                                             <i class="fa fa-envelope-o" aria-hidden="true" ></i>
                                         </Card.Body>
@@ -159,23 +166,31 @@ export default function Content() {
                     
                 </Grid>
             </Grid.Container>
-            
+            <spin id='skills'></spin>
             <hr style={{border:'solid 1px', margin:'40px'}}/>
-
+                            
             <Text size={40} css={{textAlign:'center', fontWeight:'$extrabold', fontFamily:'monospace'}}>
                 Skills
             </Text>
             <Grid.Container gap={2} justify="center" css={{marginTop:'$8'}}>
                 <Grid xs={12} md={6}>
                     <Container>
-                        <Text h5 size={20}>
+                        <Text
+                            h5
+                            size={20}
+                            css={{
+                                textGradient: "45deg, $yellow600 -20%, $red600 100%",
+                                marginTop:'$5'
+                            }}
+                        >
                             Programming Languages
                         </Text>
                         <Card css={{marginTop:'$8', marginBottom:'$8'}}>
                             <Card.Body>
+                            
                                 <Grid.Container gap={2} justify="center" css={{color:'$white'}}> 
                                     <Grid >
-                                        <Link>
+                                        <Link onClick={()=>{setIsJavaToast(true)}}>
                                             <Card css={{background:'transparent'}}>
                                                 <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
                                                     <i class="fa-brands fa-java"></i>
@@ -251,7 +266,14 @@ export default function Content() {
                 </Grid>
                 <Grid xs={12} md={3}>
                     <Container>
-                        <Text h5 size={20}>
+                        <Text
+                            h5
+                            size={20}
+                            css={{
+                                textGradient: "45deg, $yellow600 -20%, $red600 100%",
+                                marginTop:'$5'
+                            }}
+                        >
                             Web Technologies
                         </Text>
                         <Card css={{marginTop:'$8', marginBottom:'$8'}}>
@@ -294,8 +316,15 @@ export default function Content() {
                 </Grid>
                 <Grid xs={12} md={3}>
                     <Container>
-                        <Text h5 size={20}>
-                            Other
+                        <Text
+                            h5
+                            size={20}
+                            css={{
+                                textGradient: "45deg, $yellow600 -20%, $red600 100%",
+                                marginTop:'$5'
+                            }}
+                        >
+                            Other Skills
                         </Text>
                         <Card css={{marginTop:'$8', marginBottom:'$8'}}>
                             <Card.Body>
@@ -339,7 +368,14 @@ export default function Content() {
             <Grid.Container gap={2} justify="center" css={{marginTop:'$8'}}>
                 <Grid xs={12} md={6}>
                     <Container>
-                        <Text h5 size={20}>
+                        <Text
+                            h5
+                            size={20}
+                            css={{
+                                textGradient: "45deg, $yellow600 -20%, $red600 100%",
+                                marginTop:'$5'
+                            }}
+                        >
                             Frameworks & Libraries
                         </Text>
                         <Card css={{marginTop:'$8', marginBottom:'$8'}}>
@@ -392,8 +428,15 @@ export default function Content() {
                 </Grid>
                 <Grid xs={12} md={6}>
                     <Container>
-                        <Text h5 size={20}>
-                            Database
+                        <Text
+                            h5
+                            size={20}
+                            css={{
+                                textGradient: "45deg, $yellow600 -20%, $red600 100%",
+                                marginTop:'$5'
+                            }}
+                        >
+                            Databases
                         </Text>
                         <Card css={{marginTop:'$8', marginBottom:'$8'}}>
                             <Card.Body>
@@ -445,10 +488,10 @@ export default function Content() {
                 </Grid>
             </Grid.Container>
 
-
+            <spin id='services'></spin>
 
             <hr style={{border:'solid 1px', margin:'40px'}}/>
-
+            
             <Text size={40} css={{textAlign:'center', fontWeight:'$extrabold', fontFamily:'monospace'}}>
                 Services
             </Text>
@@ -646,11 +689,11 @@ export default function Content() {
                     </Container>
                 </Grid>
             </Grid.Container>
-
+            <spin id='projects'></spin>
 
             <hr style={{border:'solid 1px', margin:'40px'}}/>
 
-            <Text size={40} css={{textAlign:'center', fontWeight:'$extrabold', fontFamily:'monospace'}}>
+            <Text size={40} css={{textAlign:'center', fontWeight:'$extrabold', fontFamily:'monospace'}} >
                 Projects
             </Text>
 
@@ -660,7 +703,8 @@ export default function Content() {
                     <Container>
                         <Card css={{marginTop:'$8', marginBottom:'$8'}}>
                             <Card.Body>
-                                <Image src='/' alt='Project Poster' height={100} css={{width:'100%', border:'2px solid', borderRadius:'$base'}}/>
+                                {isDark && <Image src='/moviemaven-logo-black.png' alt='Project Poster' height={100} css={{width:'100%'}}/>}
+                                {!isDark && <Image src='/moviemaven-logo-white.png' alt='Project Poster' height={100} css={{width:'100%'}}/>}
                                 <Text
                                     h4
                                     css={{
@@ -683,7 +727,9 @@ export default function Content() {
                     <Container>
                         <Card css={{marginTop:'$8', marginBottom:'$8'}}>
                             <Card.Body>
-                                <Image src='/' alt='Project Poster' height={100} css={{width:'100%', border:'2px solid', borderRadius:'$base'}}/>
+                                {isDark && <Image src='/encore-logo-black.png' alt='Project Poster' height={100} css={{width:'100%'}}/>}
+                                {!isDark && <Image src='/encore-logo-white.png' alt='Project Poster' height={100} css={{width:'100%'}}/>}
+                                
                                 <Text
                                     h4
                                     css={{
@@ -707,7 +753,9 @@ export default function Content() {
                     <Container>
                         <Card css={{marginTop:'$8', marginBottom:'$8'}}>
                             <Card.Body>
-                                <Image src='/' alt='Project Poster' height={100} css={{width:'100%', border:'2px solid', borderRadius:'$base'}}/>
+                                {isDark && <Image src='/travelite-logo-black.png' alt='Project Poster' height={100} css={{width:'100%'}}/>}
+                                {!isDark && <Image src='/travelite-logo-white.png' alt='Project Poster' height={100} css={{width:'100%'}}/>}
+                                
                                 <Text
                                     h4
                                     css={{
@@ -735,7 +783,8 @@ export default function Content() {
                     <Container>
                         <Card css={{marginTop:'$8', marginBottom:'$8'}}>
                             <Card.Body>
-                                <Image src='/' alt='Project Poster' height={100} css={{width:'100%', border:'2px solid', borderRadius:'$base'}}/>
+                                {isDark && <Image src='/zoho-logo-black.png' alt='Project Poster' height={100} css={{width:'100%'}}/>}
+                                {!isDark && <Image src='/zoho-logo-white.png' alt='Project Poster' height={100} css={{width:'100%'}}/>}
                                 <Text
                                     h4
                                     css={{
@@ -758,7 +807,8 @@ export default function Content() {
                     <Container>
                         <Card css={{marginTop:'$8', marginBottom:'$8'}}>
                             <Card.Body>
-                                <Image src='/' alt='Project Poster' height={100} css={{width:'100%', border:'2px solid', borderRadius:'$base'}}/>
+                                {isDark && <Image src='/yourchoice-logo-black.png' alt='Project Poster' height={100} css={{width:'100%'}}/>}
+                                {!isDark && <Image src='/yourchoice-logo-white.png' alt='Project Poster' height={100} css={{width:'100%'}}/>}
                                 <Text
                                     h4
                                     css={{
@@ -781,7 +831,8 @@ export default function Content() {
                     <Container>
                         <Card css={{marginTop:'$8', marginBottom:'$8'}}>
                             <Card.Body>
-                                <Image src='/' alt='Project Poster' height={100} css={{width:'100%', border:'2px solid', borderRadius:'$base'}}/>
+                                {isDark && <Image src='/moviemaven-logo-black.png' alt='Project Poster' height={100} css={{width:'100%'}}/>}
+                                {!isDark && <Image src='/moviemaven-logo-white.png' alt='Project Poster' height={100} css={{width:'100%'}}/>}
                                 <Text
                                     h4
                                     css={{
@@ -790,7 +841,7 @@ export default function Content() {
                                     }}
                                     weight="bold"
                                 >
-                                    Encore Thrift Store
+                                    Movie Maven - Website
                                 </Text>
                                 <Text css={{textAlign:'justify'}}>
                                     This is a Web System for managing the Encore Thirft Store. MERN Stack is used to develop this
@@ -804,7 +855,7 @@ export default function Content() {
                 
                 
             </Grid.Container>
-
+            <spin id='contact'></spin>
 
             <hr style={{border:'solid 1px', margin:'40px'}}/>
 
@@ -815,63 +866,154 @@ export default function Content() {
             <Grid.Container gap={1} justify="center" css={{marginTop:'$8', marginBottom:'$8'}}>
                 <Grid xs={12} sm={4}>
                     <Container>
-                        <Card css={{marginTop:'$8', marginBottom:'$8'}}>
+                        <Card css={{marginTop:'$8', marginBottom:'$8',padding:'$4',paddingLeft:'$12'}}>
                             <Card.Body>
+                                <Text
+                                    h4
+                                    css={{
+                                        textGradient: "45deg, $yellow600 -20%, $red600 100%",
+                                        marginTop:'$5'
+                                    }}
+                                >
+                                    Contact Details
+                                </Text>
+                                <table>
+                                    <tr>
+                                        <td style={{width:'40px'}}>
+                                        <Text size={25}><iconify-icon icon="fluent:mail-32-filled"></iconify-icon></Text>
+                                        </td>
+                                        <td >
+                                        <Text>
+                                            <Link 
+                                                href={`mailto:${email}`} 
+                                                onClick={() => {
+                                                    window.location.href = `mailto:${email}`
+                                                }}
+                                            >
+                                                sanjananilankaperera@gmail.com
+                                            </Link>
+                                        </Text>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style={{width:'40px'}}>
+                                        <Text size={25}><iconify-icon icon="solar:phone-bold"></iconify-icon></Text>
+                                        </td>
+                                        <td >
+                                        <Text>
+                                            <Link href={`tel:${phone}`}>
+                                                +94 72 944 9616
+                                            </Link>
+                                        </Text>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style={{width:'40px'}}>
+                                        <Text size={25}><iconify-icon icon="logos:whatsapp-icon"></iconify-icon></Text>
+                                        </td>
+                                        <td >
+                                        <Text>
+                                            <Link href={`https://wa.me/${phone}`}>
+                                                +94 72 944 9616
+                                            </Link>
+                                        </Text>
+                                        </td>
+                                    </tr>
+                                </table>
 
+                                <Text
+                                    h4
+                                    css={{
+                                        textGradient: "45deg, $yellow600 -20%, $red600 100%",
+                                        marginTop:'$5'
+                                    }}
+                                >
+                                    Professional Profiles
+                                </Text>
+
+                                <table>
+                                    <tr>
+                                        <td style={{width:'40px'}}>
+                                        <Text size={25}><iconify-icon icon="skill-icons:linkedin"></iconify-icon></Text>
+                                        </td>
+                                        <td >
+                                        <Text>
+                                            <Link href={`https://www.linkedin.com/in/sanjana-nilanka-02091319a/`} target='_blank'>
+                                                Sanjana Nilanka
+                                            </Link>
+                                        </Text>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style={{width:'40px'}}>
+                                        <Text size={25}><iconify-icon icon="akar-icons:github-fill"></iconify-icon></Text>
+                                        </td>
+                                        <td >
+                                        <Text>
+                                            <Link href={`https://github.com/IT21358234`} target='_blank'>
+                                                Nilanka
+                                            </Link>
+                                        </Text>
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                                <Text
+                                    h4
+                                    css={{
+                                        textGradient: "45deg, $yellow600 -20%, $red600 100%",
+                                        marginTop:'$5'
+                                    }}
+                                >
+                                    Social Media
+                                </Text>
+                                
+                                
+                                <table>
+                                    <tr>
+                                        <td style={{width:'40px'}}>
+                                        <Text size={25}><iconify-icon icon="devicon:twitter"></iconify-icon></Text>
+                                        </td>
+                                        <td >
+                                        <Text>
+                                            <Link href={`https://twitter.com/Nilanka_SN`} target='_blank'>
+                                                Nilanka
+                                            </Link>
+                                        </Text>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style={{width:'40px'}}>
+                                        <Text size={25}><iconify-icon icon="skill-icons:instagram"></iconify-icon></Text>
+                                        </td>
+                                        <td >
+                                        <Text>
+                                            <Link href={`https://www.instagram.com/nilanka_sn/`} target='_blank'>
+                                                Nilanka
+                                            </Link>
+                                        </Text>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style={{width:'40px'}}>
+                                        <Text size={25}><iconify-icon icon="logos:facebook"></iconify-icon></Text>
+                                        </td>
+                                        <td >
+                                        <Text>
+                                            <Link href={`https://web.facebook.com/nilanka.sanjana/`} target='_blank'>
+                                                Sanjana Nilanka
+                                            </Link>
+                                        </Text>
+                                        </td>
+                                    </tr>
+                                </table>
                             </Card.Body>
                         </Card>
                     </Container>
                 </Grid>
-                <Grid xs={12} sm={8}>
-                    <Container>
-                        <Card css={{marginTop:'$8', marginBottom:'$8',padding:'$12'}}>
-                            <Card.Body css={{paddingTop:'$10'}}>
-                                <Input clearable bordered labelPlaceholder="Name"  color='warning' css={{border:'2px solid $yellow600', }}/>
-                            </Card.Body>
-                            <Card.Body css={{paddingTop:'$10'}}>
-                                <Input clearable bordered labelPlaceholder="Email" type='email' color='warning' css={{border:'2px solid $yellow600', }}/>
-                            </Card.Body>
-                            <Card.Body css={{paddingTop:'$10'}}>
-                                <Input clearable bordered labelPlaceholder="Subject"  color='warning' css={{border:'2px solid $yellow600'}}/>
-                            </Card.Body>
-                            <Card.Body css={{paddingTop:'$10'}}>
-                                <Textarea
-                                    bordered
-                                    color='warning'
-                                    css={{border:'2px solid $yellow600'}}
-                                    labelPlaceholder="Bordered Textarea"
-                                    minRows={10}
-                                />
-                            </Card.Body>
-                            <Grid.Container justify='space-around'>
-                                <Grid>
-                                    <Button 
-                                        auto 
-                                        css={{ 
-                                            borderRadius: '$xs', 
-                                            border: '2px solid $yellow600',
-                                            background: 'linear-gradient(to right, #FFB938, #f33d4e)',
-                                            color: '$white',
-                                            height: '$15', 
-                                            boxShadow: '$md', 
-                                            margin:'$8',
-                                            fontSize:'$1xl',
-                                            '&:hover': {
-                                            background: 'linear-gradient(to left, #FFB938, #f33d4e)',
-                                            borderColor:'$red600'
-                                            
-                                            },
-                                        }}
-                                        >
-                                        Send Message
-                                    </Button>
-                                </Grid>
-                            </Grid.Container>
-                        </Card>
-                    </Container>
-                    
-                </Grid>
+                <MessageSend/>
             </Grid.Container>
+
 
             <hr style={{border:'solid 1px', margin:'40px', marginBottom:'10px'}}/>
             <Text css={{textAlign:'center', marginBottom:'20px'}}>
