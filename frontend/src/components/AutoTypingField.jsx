@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react'
-import {useTypewriter, Cursor, Typewriter} from 'react-simple-typewriter'
+import React from 'react'
+import {Typewriter} from 'react-simple-typewriter'
 import {Text} from '@nextui-org/react'
 
 export default function AutoTypingField() {

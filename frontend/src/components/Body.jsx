@@ -1,7 +1,6 @@
 import {Navbar, Button, Link, Text, Spacer, Grid, Avatar} from '@nextui-org/react'
-import React, {useEffect, useState} from 'react'
-import { styled, Card, Container } from "@nextui-org/react"
-import { Switch, changeTheme, useTheme } from '@nextui-org/react'
+import React, {useState} from 'react'
+import { Card } from "@nextui-org/react"
 import Content from './Content'
 
 
@@ -14,7 +13,7 @@ export default function Body({onToggleTheme}) {
         window.localStorage.setItem('data-theme', nextTheme); // you can use any storage
         changeTheme(nextTheme);
     }*/
-    const collapseItems = [
+    /*const collapseItems = [
         "Profile",
         "Dashboard",
         "Activity",
@@ -25,7 +24,7 @@ export default function Body({onToggleTheme}) {
         "Team Settings",
         "Help & Feedback",
         "Log Out",
-    ]
+    ]*/
 
     const handleDarkThemeChange = (e) =>{
         setIsDark(true)
@@ -37,12 +36,7 @@ export default function Body({onToggleTheme}) {
         localStorage.setItem('isDarkLocal', isDark);
     }
 
-    const btnStyle = {
-        background: 'linear-gradient(to right, #FFB938 -20%, #f33d4e 100%)',
-    }
-    const btnStyleHover = {
-        background: 'linear-gradient(to left, #FFB938 -20%, #f33d4e 100%)',
-    }
+
 
     const[isHomeActive, setIsHomeActive] = useState(true)
     const[isSkillsActive, setIsSkillsActive] = useState(false)

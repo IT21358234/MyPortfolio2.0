@@ -1,4 +1,4 @@
-import { Modal, useModal, Button, Text, Link } from "@nextui-org/react";
+import { Modal, useModal, Text, Link } from "@nextui-org/react";
 
 export default function DescriptionPopup({title, description}) {
   const { setVisible, bindings } = useModal();

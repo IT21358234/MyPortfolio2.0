@@ -4,8 +4,8 @@ export default function ProjectPopup({title, description, githubLink, linkedinLi
   const { setVisible, bindings } = useModal();
   const setTitle = title
   const setDescription = description
-  const setGithubLink = githubLink
-  const setLinkedinLink = linkedinLink
+  /*const setGithubLink = githubLink
+  const setLinkedinLink = linkedinLink*/
 
   return (
     <div>

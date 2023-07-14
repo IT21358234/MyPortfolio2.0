@@ -1,6 +1,5 @@
 import React from 'react'
 import './toast-msg.css'
-import {useParams} from 'react-router-dom'
 
 export default function ToastMsg(props) {
     const toastMsg = props.msg

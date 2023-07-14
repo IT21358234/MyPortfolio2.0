@@ -1,12 +1,8 @@
-import React, {useState} from 'react'
-import {Card, Container, Grid, Row, Text, Col, Spacer, Button, Link, Image, Badge, useTheme, Input, Textarea, useSSR} from '@nextui-org/react'
-import TypingField from './TypingField'
-import BlinkingCursor from './BlinkingCursor'
+import React from 'react'
+import {Card, Container, Grid, Text, Link, Image, Badge} from '@nextui-org/react'
 import DescriptionPopup from './DescriptionPopup'
 import ProjectPopup from './ProjectPopup'
-import XLSX from 'xlsx'
 import AutoTypingField from './AutoTypingField'
-import ToastMsg from './ToastMsg'
 import MessageSend from './MessageSend'
 
 export default function Content({isDark}) {
@@ -15,12 +11,10 @@ export default function Content({isDark}) {
     }
 
     const webDebvelopment = "With expertise in the MERN stack (MongoDB, Express.js, React, and Node.js), I offer comprehensive full-stack web development services. From designing and implementing efficient backend APIs using Node.js and Express.js to developing dynamic and interactive user interfaces with React, I can help bring your web application ideas to life. Leveraging MongoDB as the database, I ensure seamless data management and create scalable and performant web solutions tailored to your specific requirements. Whether it's building a responsive e-commerce platform or a modern web application, I am well-versed in the latest tools and technologies of the MERN stack to deliver high-quality and robust web solutions.Additionally, I have besic kowledge about developing web app combining Django and react."
-    const appDevelopment = ""
+
 
     const  email = 'sanjananilankaperer@gmail.com'
     const phone = '+94729449616'
-
-    const [isJavaToast, setIsJavaToast] = useState(false)
 
     return (
         <div>
@@ -190,7 +184,7 @@ export default function Content({isDark}) {
                             
                                 <Grid.Container gap={2} justify="center" css={{color:'$white'}}> 
                                     <Grid >
-                                        <Link onClick={()=>{setIsJavaToast(true)}}>
+                                        <Link>
                                             <Card css={{background:'transparent'}}>
                                                 <Card.Body css={{fontSize:'$7xl', textAlign:'center'}}>
                                                     <i class="fa-brands fa-java"></i>
