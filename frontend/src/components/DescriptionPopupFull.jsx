@@ -1,6 +1,6 @@
 import { Modal, useModal, Text, Link, Grid, Card } from "@nextui-org/react";
 
-export default function DescriptionPopup({title, description}) {
+export default function DescriptionPopupFull({title, description}) {
   const { setVisible, bindings } = useModal();
   const setTitle = title
   const setDescription = description

@@ -204,6 +204,7 @@ export default function Body({onToggleTheme}) {
                         </Link>
                     </Navbar.CollapseItem>
                     <Navbar.CollapseItem>
+                        <a href='/SanjanaNilankaResume.pdf' download>
                         <Button 
                             auto 
                             css={{ 
@@ -221,6 +222,7 @@ export default function Body({onToggleTheme}) {
                             >
                                Download Resume
                         </Button>
+                        </a>
                     </Navbar.CollapseItem>
                 </Navbar.Collapse>
             </Navbar>

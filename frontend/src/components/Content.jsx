@@ -532,7 +532,7 @@ export default function Content({isDark}) {
                                 <i class="fa-solid fa-code"></i>    Additionaly, Having besic knowledge about Web Developing using combination of React and Django
                                         
                                 </Text>
-                                <DescriptionPopup title='Full Stack Web Development' description={webDebvelopment}/>
+                                <DescriptionPopup title='Full Stack Web Development' description={webDebvelopment} />
                                 
                             </Card.Body>
                         </Card>
