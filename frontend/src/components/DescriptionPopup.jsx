@@ -1,19 +1,24 @@
 import { Modal, useModal, Text, Link, Grid, Card } from "@nextui-org/react";
 
 export default function DescriptionPopup({title, description}) {
-  const { setVisible, bindings } = useModal();
+  const { setVisible, bindings } = useModal()
   const setTitle = title
   const setDescription = description
 
+
   return (
     <div>
+
       
-      <Link css={{fontWeight:'$bold'}} onPress={() => setVisible(true)}>SEE MORE &nbsp;<i class="fa-solid fa-arrow-right-long"></i></Link>
+      <Link css={{fontWeight:'$bold'}} onPress={() => {setVisible(true)}}>SEE MORE &nbsp;<i class="fa-solid fa-arrow-right-long"></i></Link>
+      
+      
+
     
       <Modal
         closeButton
         scroll
-        width="50%"
+        width='80%'
         aria-labelledby="modal-title"
         aria-describedby="modal-description"
         {...bindings}
@@ -77,6 +82,152 @@ export default function DescriptionPopup({title, description}) {
                   </Card>
                 </Link>
               </Grid>
+              </Grid.Container>
+            }
+            {setTitle === 'Android App Development' &&
+              <Grid.Container justify="center">
+                <Grid >
+                  <Link>
+                    <Card css={{background:'transparent'}}>
+                      <Card.Body css={{fontSize:'$4xl', textAlign:'center'}}>
+                      <i class="fa-brands fa-android"></i>
+                      </Card.Body>
+                    </Card>
+                  </Link>
+                </Grid>
+                <Grid >
+                <Link>
+                  <Card css={{background:'transparent'}}>
+                    <Card.Body css={{fontSize:'$4xl', textAlign:'center'}}>
+                    <iconify-icon icon="simple-icons:flutter"></iconify-icon>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Grid>
+              
+              <Grid >
+                <Link>
+                  <Card css={{background:'transparent'}}>
+                    <Card.Body css={{fontSize:'$4xl', textAlign:'center'}}>
+                    <iconify-icon icon="simple-icons:dart"></iconify-icon>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Grid>
+
+              <Grid >
+                <Link>
+                  <Card css={{background:'transparent'}}>
+                    <Card.Body css={{fontSize:'$4xl', textAlign:'center'}}>
+                    <iconify-icon icon="simple-icons:androidstudio"></iconify-icon>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Grid>
+              
+              </Grid.Container>
+            }
+            
+            {setTitle === 'UI/UX Designing & Developing' &&
+              <Grid.Container justify="center">
+                <Grid >
+                  <Link>
+                    <Card css={{background:'transparent'}}>
+                      <Card.Body css={{fontSize:'$4xl', textAlign:'center'}}>
+                      <iconify-icon icon="solar:figma-linear"></iconify-icon>
+                      </Card.Body>
+                    </Card>
+                  </Link>
+                </Grid>
+                <Grid >
+                <Link>
+                  <Card css={{background:'transparent'}}>
+                    <Card.Body css={{fontSize:'$4xl', textAlign:'center'}}>
+                    <i class="fa-brands fa-html5"></i>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Grid>
+              
+              <Grid >
+                <Link>
+                  <Card css={{background:'transparent'}}>
+                    <Card.Body css={{fontSize:'$4xl', textAlign:'center'}}>
+                    <i class="fa-brands fa-css3-alt"></i>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Grid>
+              <Grid >
+                <Link>
+                  <Card css={{background:'transparent'}}>
+                    <Card.Body css={{fontSize:'$4xl', textAlign:'center'}}>
+                    <iconify-icon icon="simple-icons:androidstudio"></iconify-icon>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Grid>
+              <Grid >
+                <Link>
+                  <Card css={{background:'transparent'}}>
+                    <Card.Body css={{fontSize:'$4xl', textAlign:'center'}}>
+                    <iconify-icon icon="simple-icons:visualstudio"></iconify-icon>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Grid>
+              
+              </Grid.Container>
+            }
+            {setTitle === 'WPF Development' &&
+              <Grid.Container justify="center">
+                <Grid >
+                  <Link>
+                    <Card css={{background:'transparent'}}>
+                      <Card.Body css={{fontSize:'$4xl', textAlign:'center'}}>
+                      <iconify-icon icon="teenyicons:c-sharp-solid"></iconify-icon>
+                      </Card.Body>
+                    </Card>
+                  </Link>
+                </Grid>
+                <Grid >
+                <Link>
+                  <Card css={{background:'transparent'}}>
+                    <Card.Body css={{fontSize:'$4xl', textAlign:'center'}}>
+                    <iconify-icon icon="devicon-plain:dot-net-wordmark"></iconify-icon>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Grid>
+              
+              <Grid >
+                <Link>
+                  <Card css={{background:'transparent'}}>
+                    <Card.Body css={{fontSize:'$4xl', textAlign:'center'}}>
+                    <iconify-icon icon="devicon-plain:flutter"></iconify-icon>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Grid>
+              <Grid >
+                <Link>
+                  <Card css={{background:'transparent'}}>
+                    <Card.Body css={{fontSize:'$4xl', textAlign:'center'}}>
+                    <iconify-icon icon="simple-icons:dart"></iconify-icon>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Grid>
+              <Grid >
+                <Link>
+                  <Card css={{background:'transparent'}}>
+                    <Card.Body css={{fontSize:'$4xl', textAlign:'center'}}>
+                    <iconify-icon icon="simple-icons:visualstudio"></iconify-icon>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Grid>
+              
               </Grid.Container>
             }
             

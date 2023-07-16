@@ -4,8 +4,8 @@ export default function ProjectPopup({title, description, githubLink, linkedinLi
   const { setVisible, bindings } = useModal();
   const setTitle = title
   const setDescription = description
-  /*const setGithubLink = githubLink
-  const setLinkedinLink = linkedinLink*/
+  const setGithubLink = githubLink
+  const setLinkedinLink = linkedinLink
 
   return (
     <div>
@@ -41,12 +41,12 @@ export default function ProjectPopup({title, description, githubLink, linkedinLi
         <Modal.Footer>
             <Grid.Container gap={1} justify="center">
                 <Grid>
-                    <Button shadow color='warning' auto iconRight={<iconify-icon icon="mdi:linkedin"></iconify-icon>}>
+                    <Button href={setLinkedinLink} shadow color='warning' auto iconRight={<iconify-icon icon="mdi:linkedin"></iconify-icon>}>
                         Screen Record
                     </Button>
                 </Grid>
                 <Grid>
-                    <Button shadow color='warning' auto iconRight={<iconify-icon icon="mdi:github"></iconify-icon>}>
+                    <Button href={setGithubLink} shadow color='warning' auto iconRight={<iconify-icon icon="mdi:github"></iconify-icon>}>
                         Source Code
                     </Button>
                 </Grid>
