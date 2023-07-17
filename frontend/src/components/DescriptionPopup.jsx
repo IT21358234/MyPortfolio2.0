@@ -1,9 +1,21 @@
 import { Modal, useModal, Text, Link, Grid, Card } from "@nextui-org/react";
+import {useEffect, useState} from "react";
 
-export default function DescriptionPopup({title, description}) {
+export default function DescriptionPopup({title, description, isDark}) {
   const { setVisible, bindings } = useModal()
   const setTitle = title
   const setDescription = description
+
+  const [containerStyle, setContainerStyle] = useState('')
+
+  useEffect(() => {
+    if(isDark === true){
+      setContainerStyle('scrollable-container scrollable-container-light-popup')
+    }
+    if (isDark === false){
+      setContainerStyle('scrollable-container scrollable-container-dark-popup')
+    }
+  },[isDark])
 
 
   return (
@@ -18,11 +30,12 @@ export default function DescriptionPopup({title, description}) {
       <Modal
         closeButton
         scroll
-        width='80%'
+        width='75%'
         aria-labelledby="modal-title"
         aria-describedby="modal-description"
         {...bindings}
         css={{height:'70vh'}}
+        blur
       >
         <Modal.Header>
           <Text 
@@ -36,10 +49,13 @@ export default function DescriptionPopup({title, description}) {
             {setTitle}
           </Text>
         </Modal.Header>
-        <Modal.Body>
-          <Text id="modal-description" css={{textAlign:'justify'}}>
+        <Modal.Body >
+          <Grid.Container className={containerStyle} css={{paddingLeft:'$10', paddingRight:'$10'}}>
+            <Text size={18} id="modal-description" css={{textAlign:'justify'}}>
             {setDescription}
           </Text>
+          </Grid.Container>
+          
         </Modal.Body>
         <Modal.Footer>
           

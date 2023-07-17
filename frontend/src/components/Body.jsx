@@ -101,12 +101,12 @@ export default function Body({onToggleTheme}) {
                     </Text>
                 </Navbar.Brand>
                 <Navbar.Content hideIn="sm" variant="default" enableCursorHighlight activeColor='warning'> 
-                    <Navbar.Link isActive={activeBtn === 'home'} onClick={() => handleNavBtnClick('home', 'home')} >Home</Navbar.Link>
-                    <Navbar.Link isActive={activeBtn === 'skills'} onClick={() => handleNavBtnClick('skills', 'skills')} >Skills</Navbar.Link>
-                    <Navbar.Link isActive={activeBtn === 'education'} onClick={() => handleNavBtnClick('education', 'education')} >Education</Navbar.Link>
-                    <Navbar.Link isActive={activeBtn === 'services'} onClick={() => handleNavBtnClick('services', 'services')} >Services</Navbar.Link>
-                    <Navbar.Link isActive={activeBtn === 'projects'} onClick={() => handleNavBtnClick('projects', 'projects')} >Projects</Navbar.Link>
-                    <Navbar.Link isActive={activeBtn === 'contact'} onClick={() => handleNavBtnClick('contact', 'contact')} >Contact</Navbar.Link>
+                    <Navbar.Link isActive={activeBtn === ''} onClick={() => handleNavBtnClick('home', 'home')} >Home</Navbar.Link>
+                    <Navbar.Link isActive={activeBtn === ''} onClick={() => handleNavBtnClick('skills', 'skills')} >Skills</Navbar.Link>
+                    <Navbar.Link isActive={activeBtn === ''} onClick={() => handleNavBtnClick('education', 'education')} >Education</Navbar.Link>
+                    <Navbar.Link isActive={activeBtn === ''} onClick={() => handleNavBtnClick('services', 'services')} >Services</Navbar.Link>
+                    <Navbar.Link isActive={activeBtn === ''} onClick={() => handleNavBtnClick('projects', 'projects')} >Projects</Navbar.Link>
+                    <Navbar.Link isActive={activeBtn === ''} onClick={() => handleNavBtnClick('contact', 'contact')} >Contact</Navbar.Link>
                 </Navbar.Content>
                 <Navbar.Content>
                     <Grid.Container gap={0} css={{ d: 'flex', flexWrap: 'nowrap' }}>

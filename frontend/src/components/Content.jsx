@@ -11,7 +11,9 @@ export default function Content({isDark}) {
     }
 
     const webDebvelopment = "With expertise in the MERN stack (MongoDB, Express.js, React, and Node.js), I offer comprehensive full-stack web development services. From designing and implementing efficient backend APIs using Node.js and Express.js to developing dynamic and interactive user interfaces with React, I can help bring your web application ideas to life. Leveraging MongoDB as the database, I ensure seamless data management and create scalable and performant web solutions tailored to your specific requirements. Whether it's building a responsive e-commerce platform or a modern web application, I am well-versed in the latest tools and technologies of the MERN stack to deliver high-quality and robust web solutions.Additionally, I have besic kowledge about developing web app combining Django and react."
-
+    const androidDevelopment = ' I have experience in native Android app development using Kotlin and XML. With extensive experience in developing robust backend systems and creating intuitive user interfaces using Android Studio, I can bring your app ideas to life. I have a strong understanding of the Android platform and its ecosystem, allowing me to build high-quality and efficient apps tailored to your specific requirements. I also have a basic understanding of Flutter mobile app development using Dart, which enables me to explore cross-platform app development possibilities. While my primary focus is on native Android development, my knowledge of Flutter allows me to leverage its benefits for rapid prototyping and cross-platform development when suitable for the project.'
+    const UIUXDesign = 'With expertise in UI/UX design, I create visually stunning and user-friendly interfaces. Using tools like Figma, I design intuitive and captivating user experiences that meet the needs of your target audience. From wireframing and prototyping to creating pixel-perfect designs, I strive to deliver interfaces that not only look great but also provide exceptional usability and user satisfaction.'
+    const wpfDevelopment = ' I have a basic understanding of WPF (Windows Presentation Foundation) and can develop Windows applications using C# and the .NET framework. With my knowledge of WPF, I can create simple desktop applications with user-friendly interfaces. I am familiar with XAML and Visual Studio, which are essential tools for WPF development. While my expertise in WPF is still developing, I am eager to expand my skills and take on new challenges in creating interactive and responsive UIs. If you need assistance with basic WPF application development, I am ready to contribute my knowledge and collaborate on your projects. Together, we can bring your ideas to life on the Windows platform.'
 
     const  email = 'sanjananilankaperer@gmail.com'
     const phone = '+94729449616'
@@ -45,7 +47,7 @@ export default function Content({isDark}) {
                         </Grid.Container>
                         <Card css={{marginTop:'$8', marginBottom:'$8'}}>
                             <Card.Body>
-                                <Text css={{textAlign:'justify'}} b>
+                                <Text css={{textAlign:'justify', paddingLeft:'$8', paddingRight:'$8'}} b>
                                     A passionate Full Stack Web Developer having an
                                     experience of building Web applications with
                                     JavaScript / Reactjs / Nodejs / Expressjs and some
@@ -629,7 +631,7 @@ export default function Content({isDark}) {
                                     Additionaly, Having besic knowledge about Backend Developing using Django framework
                                         
                                 </Text><Spacer y={0.5}/>
-                                <DescriptionPopup title='Full Stack Web Development' description={webDebvelopment} />
+                                <DescriptionPopup title='Full Stack Web Development' description={webDebvelopment} isDark={isDark} />
                                 
                             </Card.Body>
                         </Card>
@@ -679,7 +681,7 @@ export default function Content({isDark}) {
                                     Additionaly, I have besic knowledge about flutter framework and Dart language. 
                                         
                                 </Text><Spacer y={0.5}/>
-                                <DescriptionPopup title='Android App Development' description={webDebvelopment}/>
+                                <DescriptionPopup title='Android App Development' description={androidDevelopment} isDark={isDark}/>
                             </Card.Body>
                         </Card>
                     </Container>
@@ -728,7 +730,7 @@ export default function Content({isDark}) {
                                 Additionaly, I can develop proper UIs for mobile and windows (WPF) applications using android studion and visual studio
                                         
                                 </Text><Spacer y={0.5}/>
-                                <DescriptionPopup title='UI/UX Designing & Developing' description={webDebvelopment}/>
+                                <DescriptionPopup title='UI/UX Designing & Developing' description={UIUXDesign} isDark={isDark}/>
                             </Card.Body>
                         </Card>
                     </Container>
@@ -774,7 +776,7 @@ export default function Content({isDark}) {
                                     Additionaly, I can design and develop attractive and user friendly UI using Visual Studio
                                         
                                 </Text><Spacer y={0.5}/>
-                                <DescriptionPopup title='WPF Development' description={webDebvelopment}/>
+                                <DescriptionPopup title='WPF Development' description={wpfDevelopment} isDark={isDark}/>
                             </Card.Body>
                         </Card>
                     </Container>
@@ -812,7 +814,7 @@ export default function Content({isDark}) {
                                     This is a Web System for managing the 'MovieMaven' Movie Downloading WebSite. MERN Stack is used to develop this.
                                 </Text>
                                 <Spacer y={3.5}/>
-                                <ProjectPopup title='Movie Maven - Admin' description='1' githubLink='' linkedinLink='' logoPath={'/moviemaven-logo.png'}/>
+                                <ProjectPopup title='Movie Maven - Admin' description='1' githubLink='' linkedinLink='' logoPath={'/moviemaven-logo.png'} isDark={isDark}/>
                             </Card.Body>
                         </Card>
                     </Container>
@@ -839,7 +841,7 @@ export default function Content({isDark}) {
                                     This is a Web System for managing the Encore Thirft Store. MERN Stack is used to develop this
                                 </Text>
                                 <Spacer y={4.8}/>
-                                <ProjectPopup title='Encore Thrift Store' description='2' githubLink='' linkedinLink='' logoPath={'/encore-logo.png'}/>
+                                <ProjectPopup title='Encore Thrift Store' description='2' githubLink='https://github.com/SLIITITP/y2_s2_wd_it_01-itp_wd_b01_g05_ThriftingManagementSystem' linkedinLink='' logoPath={'/encore-logo.png'} isDark={isDark}/>
                             </Card.Body>
                         </Card>
                         
@@ -867,7 +869,7 @@ export default function Content({isDark}) {
                                     This is a Mobile App that implemented to improve tourism in Sri Lanka. This App was implemented for toursts, hotel and restaurant owners and transport providers. This is a Android Native Development using Kotlin
                                 </Text>
                                 <Spacer/>
-                                <ProjectPopup title='Travelite' description='3' githubLink='' linkedinLink='' logoPath={'/travelite-logo.png'}/>
+                                <ProjectPopup title='Travelite' description='3' githubLink='https://github.com/IT21358234/Mad-Mini-Project' linkedinLink='' logoPath={'/travelite-logo.png'} isDark={isDark}/>
                             </Card.Body>
                         </Card>
                     </Container>
@@ -899,7 +901,7 @@ export default function Content({isDark}) {
                                     This is a Web System to mange the inventory of Zoho Online Store. This was implemented with all function of Stock Manger, Purchasing Manager & Shipping Manager. HTML, CSS, JS and Java Sevlet were used.
                                 </Text>
                                 <Spacer/>
-                                <ProjectPopup title='Zoho Online Store' description='4' githubLink='' linkedinLink='' logoPath={'/zoho-logo-black.png'}/>
+                                <ProjectPopup title='Zoho Online Store' description='4' githubLink='' linkedinLink='' logoPath={'/zoho-logo-black.png'} isDark={isDark}/>
                             </Card.Body>
                         </Card>
                     </Container>
@@ -925,8 +927,8 @@ export default function Content({isDark}) {
                                 <Text css={{textAlign:'justify'}}>
                                     This is a E commerce Web Site. Users can purchase various thing under various categories. HTML, CSS, JS, PHP, SQL are used to implement this site
                                 </Text>
-                                <Spacer y={3.5}/>
-                                <ProjectPopup title='YourChoice Online Store' description='5' githubLink='' linkedinLink='' logoPath={'/yourchoice-logo.png'}/>
+                                <Spacer y={2.5}/>
+                                <ProjectPopup title='YourChoice Online Store' description='5' githubLink='' linkedinLink='' logoPath={'/yourchoice-logo.png'} isDark={isDark}/>
                             </Card.Body>
                         </Card>
                     </Container>
@@ -952,8 +954,8 @@ export default function Content({isDark}) {
                                 <Text css={{textAlign:'justify'}}>
                                     This is a Web System for managing the Encore Thirft Store. MERN Stack is used to develop this
                                 </Text>
-                                <Spacer y={4.8}/>
-                                <ProjectPopup title='Movie Maven - Admin' description='6' githubLink='' linkedinLink='' logoPath={'/moviemaven-logo.png'}/>
+                                <Spacer y={4}/>
+                                <ProjectPopup title='Movie Maven - Admin' description='6' githubLink='' linkedinLink='' logoPath={'/moviemaven-logo.png'} isDark={isDark}/>
                             </Card.Body>
                         </Card>
                         

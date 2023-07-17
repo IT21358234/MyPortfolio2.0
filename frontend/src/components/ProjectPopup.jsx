@@ -1,12 +1,24 @@
 import { Modal, useModal, Button, Text, Link, Grid, Image, Spacer } from "@nextui-org/react";
+import {useState, useEffect} from "react";
 
-export default function ProjectPopup({title, description, githubLink, linkedinLink, logoPath}) {
+export default function ProjectPopup({title, description, githubLink, linkedinLink, logoPath, isDark}) {
   const { setVisible, bindings } = useModal();
   const setTitle = title
   const setDescription = description
   const setGithubLink = githubLink
   const setLinkedinLink = linkedinLink
   const setLogoPath = logoPath
+
+  const [containerStyle, setContainerStyle] = useState('')
+
+  useEffect(() => {
+    if(isDark === true){
+      setContainerStyle('scrollable-container scrollable-container-light-popup')
+    }
+    if (isDark === false){
+      setContainerStyle('scrollable-container scrollable-container-dark-popup')
+    }
+  },[isDark])
 
   return (
     <div>
@@ -16,11 +28,12 @@ export default function ProjectPopup({title, description, githubLink, linkedinLi
       <Modal
         closeButton
         scroll
-        width="80%"
+        width="75%"
         aria-labelledby="modal-title"
         aria-describedby="modal-description"
         {...bindings}
         css={{height:'70vh'}}
+        blur
       >
         <Modal.Header css={{paddingBottom:'$10'}}>
           <Grid.Container justify="center" gap={0}>
@@ -52,7 +65,7 @@ export default function ProjectPopup({title, description, githubLink, linkedinLi
         </Modal.Header>
         <Modal.Body>
           {/*<Image src="/under-construction.gif"/>*/}
-          <Grid.Container justify="space-between" gap={2}>
+          <Grid.Container justify="space-between" gap={2} className={containerStyle}>
             {/*<Grid md={4} xs={12} css={{overflow:'hidden'}}> 
               <Card css={{height:'30vh'}}>
                 <Card.Body css={{height:'50px'}}>
@@ -72,7 +85,7 @@ export default function ProjectPopup({title, description, githubLink, linkedinLi
           <Grid  md={12} xs={12} css={{paddingTop:'$0'}}>
               
               {setDescription === '1' && 
-                <Text  css={{textAlign:'justify', paddingTop:'$0'}}>
+                <Text size={18} css={{textAlign:'justify', paddingTop:'$0'}}>
                   This website management system was developed to learn react function components and improve my skill related to MERN web developing. I design and develop entire system using MERN stack.
                   <Spacer/>
                   Functions that I implemeted in 'MovieMaven' Website Management System
@@ -105,7 +118,7 @@ export default function ProjectPopup({title, description, githubLink, linkedinLi
                 </Text>
               }
               {setDescription === '2' && 
-                <Text  css={{textAlign:'justify', paddingTop:'$0'}}>
+                <Text size={18} css={{textAlign:'justify', paddingTop:'$0'}}>
                   This web application was developed for the 2nd year 2nd semester project of ITP(Information Technology Project) module at SLIIT. 8 Members contributed to develop this web application. I contribute to develop the Purchasing Management Subsystem of this Encore Management System.
                   <Spacer/>
                   Functions that I implemeted in Purchasing Management Subsytem:-
@@ -143,7 +156,7 @@ export default function ProjectPopup({title, description, githubLink, linkedinLi
                 </Text>
               }
               {setDescription === '3' && 
-                <Text  css={{textAlign:'justify', paddingTop:'$0'}}>
+                <Text size={18} css={{textAlign:'justify', paddingTop:'$0'}}>
                   This android application was developed for the 2nd year 2nd semester project of MAD(Mobile Application Development) module at SLIIT. 4 Members contributed to develop this application. I contribute to develop the Hotel and Restaurant sub componant of the app.
                   <Spacer/>
                   Functions that I implemeted in Purchasing Management Subsytem:-
@@ -178,7 +191,7 @@ export default function ProjectPopup({title, description, githubLink, linkedinLi
                 </Text>
               }
               {setDescription === '4' && 
-                <Text  css={{textAlign:'justify', paddingTop:'$0'}}>
+                <Text size={18} css={{textAlign:'justify', paddingTop:'$0'}}>
                   This web based system was developed for the 2nd year 1st semester project of OOP(Object Oriented Programming) module at SLIIT. 3 Members contributed to develop this web system. I contribute to develop the Purchasing Management Subsystem of this inventory Management System of ZOHO Online Store.
                   <Spacer/>
                   Functions that I implemeted in Purchasing Management Subsytem:-
@@ -208,7 +221,7 @@ export default function ProjectPopup({title, description, githubLink, linkedinLi
                 </Text>
               }
               {setDescription === '5' && 
-                <Text  css={{textAlign:'justify', paddingTop:'$0'}}>
+                <Text size={18} css={{textAlign:'justify', paddingTop:'$0'}}>
                   This website was implemented for the 1st year 2nd semester project of IWT(Introduction to Web Technologies) module at SLIIT. 5 Members contributed to develop this website. I contribute to implement user profile, book and vehicle category pages and admin settings.
                   <Spacer/>
                     This is a ecommerce website. users can register in website and buy goods. user can search goods by name and user also can see the goods in variuos category. And they can add them to cart or directly buy goods that they want   
@@ -232,7 +245,7 @@ export default function ProjectPopup({title, description, githubLink, linkedinLi
                 </Text>
               }
               {setDescription === '6' && 
-                <Text  css={{textAlign:'justify', paddingTop:'$0'}}>
+                <Text size={18} css={{textAlign:'justify', paddingTop:'$0'}}>
                   This website is implementing to improve my skills. This is not completed yet. Main task of this web site is downloading movies. I'm using MERN stack and NextUI to create this website
                   <Spacer/>
                   User can register with the website. but they not required to register or login for downloading movie they can directly browse movies and download them. When user register and login to site, they can add movies to watch list and favourite list also they can rate movies and add reviews. Additionaly, they can add comments to movies and request movies to add for downloading. In this site not only for downloading movie. users can also see the short description about movies and mant other details in under each movie title.
@@ -269,9 +282,11 @@ export default function ProjectPopup({title, description, githubLink, linkedinLi
                     </Button>
                 </Grid>
                 <Grid>
+                  <Link href={setGithubLink}>
                     <Button href={setGithubLink} shadow color='warning' auto iconRight={<iconify-icon icon="mdi:github"></iconify-icon>}>
                         Source Code
                     </Button>
+                  </Link>
                 </Grid>
             </Grid.Container>
             
