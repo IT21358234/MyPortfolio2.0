@@ -1,5 +1,5 @@
 import {Navbar, Button, Link, Text, Spacer, Grid, Avatar} from '@nextui-org/react'
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Card } from "@nextui-org/react"
 import Content from './Content'
 
@@ -25,6 +25,44 @@ export default function Body({onToggleTheme}) {
         "Help & Feedback",
         "Log Out",
     ]*/
+
+    const [activeBtn, setActiveBtn] = useState('home')
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const home = document.getElementById('home')
+            const skills = document.getElementById('skills')
+            const services = document.getElementById('services')
+            const education = document.getElementById('education')
+            const projects = document.getElementById('projects')
+            const contact = document.getElementById('contact')
+
+            const scrollPosition = window.scrollY + window.innerHeight
+
+            if(scrollPosition >= contact.offsetTop){
+                setActiveBtn('contact')
+            } else if (scrollPosition >= projects.offsetTop){
+                setActiveBtn('projects')
+            } else if (scrollPosition >= services.offsetTop){
+                setActiveBtn('services')
+            } else if (scrollPosition >= education.offsetTop){
+                setActiveBtn('education')
+            } else if (scrollPosition >= skills.offsetTop){
+                setActiveBtn('skills')
+            } else if (scrollPosition >= home.offsetTop){
+                setActiveBtn('home')
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
+    const handleNavBtnClick = (btn, sectionID) => {
+        setActiveBtn(btn)
+        const section = document.getElementById(sectionID)
+        section.scrollIntoView({behavior:'smooth'})
+    }
 
     const handleDarkThemeChange = (e) =>{
         setIsDark(true)
@@ -63,12 +101,12 @@ export default function Body({onToggleTheme}) {
                     </Text>
                 </Navbar.Brand>
                 <Navbar.Content hideIn="sm" variant="default" enableCursorHighlight activeColor='warning'> 
-                    <Navbar.Link href="#" >Home</Navbar.Link>
-                    <Navbar.Link href="#skills"  >Skills</Navbar.Link>
-                    <Navbar.Link href="#services" >Services</Navbar.Link>
-                    <Navbar.Link href="#education" >Education</Navbar.Link>
-                    <Navbar.Link href="#projects" >Projects</Navbar.Link>
-                    <Navbar.Link href="#contact" >Contact</Navbar.Link>
+                    <Navbar.Link isActive={activeBtn === 'home'} onClick={() => handleNavBtnClick('home', 'home')} >Home</Navbar.Link>
+                    <Navbar.Link isActive={activeBtn === 'skills'} onClick={() => handleNavBtnClick('skills', 'skills')} >Skills</Navbar.Link>
+                    <Navbar.Link isActive={activeBtn === 'education'} onClick={() => handleNavBtnClick('education', 'education')} >Education</Navbar.Link>
+                    <Navbar.Link isActive={activeBtn === 'services'} onClick={() => handleNavBtnClick('services', 'services')} >Services</Navbar.Link>
+                    <Navbar.Link isActive={activeBtn === 'projects'} onClick={() => handleNavBtnClick('projects', 'projects')} >Projects</Navbar.Link>
+                    <Navbar.Link isActive={activeBtn === 'contact'} onClick={() => handleNavBtnClick('contact', 'contact')} >Contact</Navbar.Link>
                 </Navbar.Content>
                 <Navbar.Content>
                     <Grid.Container gap={0} css={{ d: 'flex', flexWrap: 'nowrap' }}>
@@ -170,36 +208,36 @@ export default function Body({onToggleTheme}) {
                         </Button>
                         </a>
                     </Navbar.Item>
-                    <Navbar.Toggle showIn="xs" />
+                    <Navbar.Toggle showIn="sm" />
                 </Navbar.Content>
-                <Navbar.Collapse disableAnimation showIn='xs'>
+                <Navbar.Collapse disableAnimation showIn='sm'>
                     <Navbar.CollapseItem>
-                        <Link color="inherit" href='#'>
+                        <Link color="inherit" isActive={activeBtn === 'home'} onClick={() => handleNavBtnClick('home', 'home')} >
                             Home
                         </Link>
                     </Navbar.CollapseItem>
                     <Navbar.CollapseItem>
-                        <Link color="inherit" href='#'>
+                        <Link color="inherit" isActive={activeBtn === 'skills'} onClick={() => handleNavBtnClick('skills', 'skills')} >
                             Skills
                         </Link>
                     </Navbar.CollapseItem>
                     <Navbar.CollapseItem>
-                        <Link color="inherit" href='#'>
+                        <Link color="inherit" isActive={activeBtn === 'education'} onClick={() => handleNavBtnClick('education', 'education')} >
+                            Education
+                        </Link>
+                    </Navbar.CollapseItem>
+                    <Navbar.CollapseItem>
+                        <Link color="inherit" isActive={activeBtn === 'services'} onClick={() => handleNavBtnClick('services', 'services')} >
                             Services
                         </Link>
                     </Navbar.CollapseItem>
                     <Navbar.CollapseItem>
-                        <Link color="inherit" href='#'>
-                            Resume
-                        </Link>
-                    </Navbar.CollapseItem>
-                    <Navbar.CollapseItem>
-                        <Link color="inherit" href='#'>
+                        <Link color="inherit" isActive={activeBtn === 'projects'} onClick={() => handleNavBtnClick('projects', 'projects')} >
                             Projects
                         </Link>
                     </Navbar.CollapseItem>
                     <Navbar.CollapseItem>
-                        <Link color="inherit" href='#'>
+                        <Link color="inherit" isActive={activeBtn === 'contact'} onClick={() => handleNavBtnClick('contact', 'contact')} >
                             Contact
                         </Link>
                     </Navbar.CollapseItem>

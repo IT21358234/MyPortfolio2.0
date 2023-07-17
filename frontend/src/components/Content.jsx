@@ -18,6 +18,7 @@ export default function Content({isDark}) {
 
     return (
         <div>
+            <section id='home' style={{top:'-400px'}}></section>
             <Grid.Container gap={2} justify="center" css={{marginTop:'$8'}}>
                 <Grid xs={12} md={8}>
                     <Container>
@@ -160,10 +161,10 @@ export default function Content({isDark}) {
                     
                 </Grid>
             </Grid.Container>
-            <spin id='skills'></spin>
+            <section id='skills'></section>
             <hr style={{border:'solid 1px', margin:'40px'}}/>
                             
-            <Text size={40} css={{textAlign:'center', fontWeight:'$extrabold', fontFamily:'monospace'}}>
+            <Text size={50} css={{textAlign:'center', fontWeight:'$extrabold', fontFamily:'arial'}}>
                 Skills
             </Text>
             <Grid.Container gap={2} justify="center" css={{marginTop:'$8'}}>
@@ -487,7 +488,7 @@ export default function Content({isDark}) {
 
             <hr style={{border:'solid 1px', margin:'40px'}}/>
             
-            <Text size={40} css={{textAlign:'center', fontWeight:'$extrabold', fontFamily:'monospace'}}>
+            <Text size={50} css={{textAlign:'center', fontWeight:'$extrabold', fontFamily:'arial'}}>
                 Education
             </Text>
 
@@ -582,7 +583,7 @@ export default function Content({isDark}) {
 
             <hr style={{border:'solid 1px', margin:'40px'}}/>
             
-            <Text size={40} css={{textAlign:'center', fontWeight:'$extrabold', fontFamily:'monospace'}}>
+            <Text size={50} css={{textAlign:'center', fontWeight:'$extrabold', fontFamily:'arial'}}>
                 Services
             </Text>
 
@@ -783,7 +784,7 @@ export default function Content({isDark}) {
 
             <hr style={{border:'solid 1px', margin:'40px'}}/>
 
-            <Text size={40} css={{textAlign:'center', fontWeight:'$extrabold', fontFamily:'monospace'}} >
+            <Text size={50} css={{textAlign:'center', fontWeight:'$extrabold', fontFamily:'arial'}} >
                 Projects
             </Text>
 
@@ -810,8 +811,8 @@ export default function Content({isDark}) {
                                 <Text css={{textAlign:'justify'}}>
                                     This is a Web System for managing the 'MovieMaven' Movie Downloading WebSite. MERN Stack is used to develop this.
                                 </Text>
-                                <Spacer/>
-                                <ProjectPopup title='Encore Thrift Store' description='' githubLink='' linkedinLink=''/>
+                                <Spacer y={3.5}/>
+                                <ProjectPopup title='Movie Maven - Admin' description='1' githubLink='' linkedinLink='' logoPath={'/moviemaven-logo.png'}/>
                             </Card.Body>
                         </Card>
                     </Container>
@@ -837,8 +838,8 @@ export default function Content({isDark}) {
                                 <Text css={{textAlign:'justify'}}>
                                     This is a Web System for managing the Encore Thirft Store. MERN Stack is used to develop this
                                 </Text>
-                                <Spacer/>
-                                <ProjectPopup title='Encore Thrift Store' description='' githubLink='' linkedinLink=''/>
+                                <Spacer y={4.8}/>
+                                <ProjectPopup title='Encore Thrift Store' description='2' githubLink='' linkedinLink='' logoPath={'/encore-logo.png'}/>
                             </Card.Body>
                         </Card>
                         
@@ -866,7 +867,7 @@ export default function Content({isDark}) {
                                     This is a Mobile App that implemented to improve tourism in Sri Lanka. This App was implemented for toursts, hotel and restaurant owners and transport providers. This is a Android Native Development using Kotlin
                                 </Text>
                                 <Spacer/>
-                                <ProjectPopup title='Travelite' description='' githubLink='' linkedinLink=''/>
+                                <ProjectPopup title='Travelite' description='3' githubLink='' linkedinLink='' logoPath={'/travelite-logo.png'}/>
                             </Card.Body>
                         </Card>
                     </Container>
@@ -898,7 +899,7 @@ export default function Content({isDark}) {
                                     This is a Web System to mange the inventory of Zoho Online Store. This was implemented with all function of Stock Manger, Purchasing Manager & Shipping Manager. HTML, CSS, JS and Java Sevlet were used.
                                 </Text>
                                 <Spacer/>
-                                <ProjectPopup title='Zoho Online Store' description='' githubLink='' linkedinLink=''/>
+                                <ProjectPopup title='Zoho Online Store' description='4' githubLink='' linkedinLink='' logoPath={'/zoho-logo-black.png'}/>
                             </Card.Body>
                         </Card>
                     </Container>
@@ -924,8 +925,8 @@ export default function Content({isDark}) {
                                 <Text css={{textAlign:'justify'}}>
                                     This is a E commerce Web Site. Users can purchase various thing under various categories. HTML, CSS, JS, PHP, SQL are used to implement this site
                                 </Text>
-                                <Spacer/>
-                                <ProjectPopup title='Encore Thrift Store' description='' githubLink='' linkedinLink=''/>
+                                <Spacer y={3.5}/>
+                                <ProjectPopup title='YourChoice Online Store' description='5' githubLink='' linkedinLink='' logoPath={'/yourchoice-logo.png'}/>
                             </Card.Body>
                         </Card>
                     </Container>
@@ -951,7 +952,8 @@ export default function Content({isDark}) {
                                 <Text css={{textAlign:'justify'}}>
                                     This is a Web System for managing the Encore Thirft Store. MERN Stack is used to develop this
                                 </Text>
-                                <Spacer/>
+                                <Spacer y={4.8}/>
+                                <ProjectPopup title='Movie Maven - Admin' description='6' githubLink='' linkedinLink='' logoPath={'/moviemaven-logo.png'}/>
                             </Card.Body>
                         </Card>
                         
@@ -964,7 +966,7 @@ export default function Content({isDark}) {
 
             <hr style={{border:'solid 1px', margin:'40px'}}/>
 
-            <Text size={40} css={{textAlign:'center', fontWeight:'$extrabold', fontFamily:'monospace'}}>
+            <Text size={50} css={{textAlign:'center', fontWeight:'$extrabold', fontFamily:'arial'}}>
                 Contact
             </Text>
 
@@ -1116,7 +1118,7 @@ export default function Content({isDark}) {
                         </Card>
                     </Container>
                 </Grid>
-                <MessageSend/>
+                <MessageSend isDark={isDark}/>
             </Grid.Container>
 
 
